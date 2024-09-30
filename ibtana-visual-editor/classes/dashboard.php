@@ -4,10 +4,10 @@
 <div class="wrap" id="ibtana-admin-wizard-parent">
     <ul class="nav nav-pills mb-3" id="ive-pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" type="button" role="tab" aria-controls="pills-dashboard" aria-selected="true"><?php _e('Dashboard', 'ibtana-visual-editor'); ?></button>
+            <button class="nav-link active" id="pills-th-templates-tab" data-template-type="wordpress" data-bs-toggle="pill" data-bs-target="#pills-th-templates" type="button" role="tab" aria-controls="pills-th-templates" aria-selected="false"><?php _e('Themes/Templates', 'ibtana-visual-editor'); ?></button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-th-templates-tab" data-template-type="wordpress" data-bs-toggle="pill" data-bs-target="#pills-th-templates" type="button" role="tab" aria-controls="pills-th-templates" aria-selected="false"><?php _e('Themes/Templates', 'ibtana-visual-editor'); ?></button>
+            <button class="nav-link" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" type="button" role="tab" aria-controls="pills-dashboard" aria-selected="true"><?php _e('Offers', 'ibtana-visual-editor'); ?><span><img src="<?php echo esc_url(IBTANA_PLUGIN_DIR_URL . 'dist/images/offer-sale.png'); ?>"></span></button>
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="pills-wc-templates-tab" data-template-type="woocommerce" data-bs-toggle="pill" data-bs-target="#pills-wc-templates" type="button" role="tab" aria-controls="pills-wc-templates" aria-selected="false"><?php _e('WooCommerce Templates', 'ibtana-visual-editor'); ?></button>
@@ -29,7 +29,174 @@
         </li>
     </ul>
     <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel" aria-labelledby="pills-dashboard-tab">
+        <div class="tab-pane fade show active" id="pills-th-templates" role="tabpanel" aria-labelledby="pills-th-templates-tab">
+
+          <?php
+              // check if the vw premium theme is activated.
+              $ive_is_pro_theme_activated	=	$this->ibtana_visual_editor_is_pro_theme_activated();
+
+              $ive_plugin_data = '';
+              $ive_plugin_version = '';
+          ?>
+          <div class="ive-ibtana-wizard-tabs-button-wrapper d-none">
+            <div class="ibtana-button-wrap">
+              <a class="active ibtana-free-template-button" data-template-type="wordpress"></a>
+            </div>
+          </div>
+          <div class="ive-plugin-admin-page">
+
+              <?php if ($ive_is_pro_theme_activated) : ?>
+                  <div class="notice ive-wizard-notice is-dismissible">
+                      <div class="ive-theme_box">
+                          <h4>
+                            <?php esc_html_e('Look\'s like you\'ve installed our ' . $ive_is_pro_theme_activated['ive_theme_title'] . ' theme. Click Get Started to run the setup wizard.', 'ibtana-visual-editor'); ?>
+                          </h4>
+                      </div>
+                      <div class="ive-notice_button">
+                          <a class="button button-primary button-hero" target="_blank" href="<?php echo esc_url($ive_is_pro_theme_activated['ive_theme_wizard_url']); ?>">
+                              <?php esc_html_e('Get Started', 'ibtana-visual-editor'); ?>
+                          </a>
+                      </div>
+                  </div>
+              <?php endif; ?>
+              <div id="ive-admin-main-tab-content-wrap-templates">
+                  <!-- Wizard Content -->
+                  <div class="ive-tab-content-box active ive-admin-main-tab-content1">
+                      <div class="wrap">
+                          <?php echo '<div class="ive-whizzie-wrap">';
+                          // The wizard is a list with only one item visible at a time
+                          $steps = $this->ibtana_visual_editor_admin_main_tab_step();
+                          echo '<ul class="ive-wizard-content-menu">';
+                          foreach ($steps as $step) {
+                              $class = 'step step-' . esc_attr($step['id']);
+                              echo '<li data-step="' . esc_attr($step['id']) . '" class="' . esc_attr($class) . '" >';
+                              if (isset($content['title'])) {
+                                  printf(
+                                      '<h3 class="ive-wizard-main-title">%s</h3>',
+                                      esc_html($step['title'])
+                                  );
+                              }
+                              // $content is split into summary and detail
+                              $content = call_user_func(array($this, $step['view']));
+                              if (isset($content['summary'])) {
+                                  printf(
+                                      '<div class="summary">%s</div>',
+                                      wp_kses_post($content['summary'])
+                                  );
+                              }
+                              if (isset($content['detail'])) {
+                                  // Add a link to see more detail
+                                  printf('<div class="wz-require-plugins">');
+                                  printf(
+                                      '<div class="detail">%s</div>',
+                                      $content['detail'] // Need to escape this
+                                  );
+                                  printf('</div>');
+                              }
+                              echo '</li>';
+                          }
+                          echo '</ul>';
+                          ?>
+                          <?php echo '</div>'; ?>
+
+                      </div>
+                  </div>
+              </div>
+
+
+              <div class="ive-plugin-popup">
+                  <div class="ive-admin-modal">
+                      <button class="ive-close-button">×</button>
+                      <div class="ive-demo-step-container">
+
+                          <div class="ive-current-step">
+
+                              <div class="ive-demo-child ive-demo-step ive-demo-step-0 active">
+                                  <h2><?php _e('Install Base Theme', 'ibtana-visual-editor'); ?></h2>
+                                  <p><?php _e('We strongly recommend to install the base theme.', 'ibtana-visual-editor'); ?></p>
+                                  <div class="ive-checkbox-container">
+                                      <?php _e('Install Base Theme', 'ibtana-visual-editor'); ?>
+                                      <span class="ive-checkbox active">
+                                          <svg width="10" height="8" viewBox="0 0 11.2 9.1">
+                                              <polyline class="check" points="1.2,4.8 4.4,7.9 9.9,1.2 "></polyline>
+                                          </svg>
+                                      </span>
+                                  </div>
+                              </div>
+
+                              <div class="ive-demo-plugins ive-demo-step ive-demo-step-1">
+                                  <h2><?php _e('Install & Activate Plugins', 'ibtana-visual-editor'); ?></h2>
+                                  <p>
+                                      <?php
+                                      _e(
+                                          'The following plugins are required for this template in order to work properly. Ignore if already installed.',
+                                          'ibtana-visual-editor'
+                                      );
+                                      ?>
+                                  </p>
+                                  <div class="ive-checkbox-container activated">
+                                      <?php _e('Elementor', 'ibtana-visual-editor'); ?>
+                                      <span class="ive-checkbox active">
+                                          <svg width="10" height="8" viewBox="0 0 11.2 9.1">
+                                              <polyline class="check" points="1.2,4.8 4.4,7.9 9.9,1.2 "></polyline>
+                                          </svg>
+                                      </span>
+                                  </div>
+                                  <div class="ive-checkbox-container">
+                                      <?php _e('Gutenberg', 'ibtana-visual-editor'); ?>
+                                      <span class="ive-checkbox active">
+                                          <svg width="10" height="8" viewBox="0 0 11.2 9.1">
+                                              <polyline class="check" points="1.2,4.8 4.4,7.9 9.9,1.2 "></polyline>
+                                          </svg>
+                                      </span>
+                                  </div>
+                              </div>
+
+                              <div class="ive-demo-template ive-demo-step ive-demo-step-2">
+                                  <h2><?php _e('Import Content', 'ibtana-visual-editor'); ?></h2>
+                                  <p><?php _e('This will import the template.', 'ibtana-visual-editor'); ?></p>
+                              </div>
+
+                              <div class="ive-demo-install ive-demo-step ive-demo-step-3">
+                                  <h2><?php _e('Installing...', 'ibtana-visual-editor'); ?></h2>
+                                  <p>
+                                      <?php
+                                      _e(
+                                          "Please be patient and don't refresh this page, the import process may take a while, this also depends on your server.",
+                                          'ibtana-visual-editor'
+                                      );
+                                      ?>
+                                  </p>
+                                  <div class="ive-progress-info">
+                                      <?php _e('Required plugins', 'ibtana-visual-editor'); ?><span>10%</span>
+                                  </div>
+                                  <div class="ive-installer-progress">
+                                      <div></div>
+                                  </div>
+                              </div>
+
+                          </div>
+
+                          <div class="ive-demo-step-controls">
+                              <button class="ive-demo-btn ive-demo-back-btn"><?php _e('Back', 'ibtana-visual-editor'); ?></button>
+                              <ul class="ive-steps-pills">
+                                  <li class="active"><?php _e('1', 'ibtana-visual-editor'); ?></li>
+                                  <li class=""><?php _e('2', 'ibtana-visual-editor'); ?></li>
+                                  <li class=""><?php _e('3', 'ibtana-visual-editor'); ?></li>
+                              </ul>
+                              <button class="ive-demo-btn ive-demo-main-btn"><?php _e('Next', 'ibtana-visual-editor'); ?></button>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+
+        </div>
+        <div class="tab-pane fade" id="pills-dashboard" role="tabpanel" aria-labelledby="pills-dashboard-tab">
+
             <div class="ive-dashboard-tab-content-wrap">
                 <div class="ive-dashboard-tab-content-card-wrap">
                     <div class="ive-dashboard-tab-content-card card-left">
@@ -199,168 +366,6 @@
                         <?php
                         }
                         ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="pills-th-templates" role="tabpanel" aria-labelledby="pills-th-templates-tab">
-            <?php
-                // check if the vw premium theme is activated.
-                $ive_is_pro_theme_activated	=	$this->ibtana_visual_editor_is_pro_theme_activated();
-
-                $ive_plugin_data = '';
-                $ive_plugin_version = '';
-            ?>
-            <div class="ive-ibtana-wizard-tabs-button-wrapper d-none">
-                <div class="ibtana-button-wrap">
-                <a class="active ibtana-free-template-button" data-template-type="wordpress"></a>
-                </div>
-            </div>
-            <div class="ive-plugin-admin-page">
-
-                <?php if ($ive_is_pro_theme_activated) : ?>
-                    <div class="notice ive-wizard-notice is-dismissible">
-                        <div class="ive-theme_box">
-                            <h4>
-                              <?php esc_html_e('Look\'s like you\'ve installed our ' . $ive_is_pro_theme_activated['ive_theme_title'] . ' theme. Click Get Started to run the setup wizard.', 'ibtana-visual-editor'); ?>
-                            </h4>
-                        </div>
-                        <div class="ive-notice_button">
-                            <a class="button button-primary button-hero" target="_blank" href="<?php echo esc_url($ive_is_pro_theme_activated['ive_theme_wizard_url']); ?>">
-                                <?php esc_html_e('Get Started', 'ibtana-visual-editor'); ?>
-                            </a>
-                        </div>
-                    </div>
-                <?php endif; ?>
-                <div id="ive-admin-main-tab-content-wrap-templates">
-                    <!-- Wizard Content -->
-                    <div class="ive-tab-content-box active ive-admin-main-tab-content1">
-                        <div class="wrap">
-                            <?php echo '<div class="ive-whizzie-wrap">';
-                            // The wizard is a list with only one item visible at a time
-                            $steps = $this->ibtana_visual_editor_admin_main_tab_step();
-                            echo '<ul class="ive-wizard-content-menu">';
-                            foreach ($steps as $step) {
-                                $class = 'step step-' . esc_attr($step['id']);
-                                echo '<li data-step="' . esc_attr($step['id']) . '" class="' . esc_attr($class) . '" >';
-                                if (isset($content['title'])) {
-                                    printf(
-                                        '<h3 class="ive-wizard-main-title">%s</h3>',
-                                        esc_html($step['title'])
-                                    );
-                                }
-                                // $content is split into summary and detail
-                                $content = call_user_func(array($this, $step['view']));
-                                if (isset($content['summary'])) {
-                                    printf(
-                                        '<div class="summary">%s</div>',
-                                        wp_kses_post($content['summary'])
-                                    );
-                                }
-                                if (isset($content['detail'])) {
-                                    // Add a link to see more detail
-                                    printf('<div class="wz-require-plugins">');
-                                    printf(
-                                        '<div class="detail">%s</div>',
-                                        $content['detail'] // Need to escape this
-                                    );
-                                    printf('</div>');
-                                }
-                                echo '</li>';
-                            }
-                            echo '</ul>';
-                            ?>
-                            <?php echo '</div>'; ?>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="ive-plugin-popup">
-                    <div class="ive-admin-modal">
-                        <button class="ive-close-button">×</button>
-                        <div class="ive-demo-step-container">
-
-                            <div class="ive-current-step">
-
-                                <div class="ive-demo-child ive-demo-step ive-demo-step-0 active">
-                                    <h2><?php _e('Install Base Theme', 'ibtana-visual-editor'); ?></h2>
-                                    <p><?php _e('We strongly recommend to install the base theme.', 'ibtana-visual-editor'); ?></p>
-                                    <div class="ive-checkbox-container">
-                                        <?php _e('Install Base Theme', 'ibtana-visual-editor'); ?>
-                                        <span class="ive-checkbox active">
-                                            <svg width="10" height="8" viewBox="0 0 11.2 9.1">
-                                                <polyline class="check" points="1.2,4.8 4.4,7.9 9.9,1.2 "></polyline>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div class="ive-demo-plugins ive-demo-step ive-demo-step-1">
-                                    <h2><?php _e('Install & Activate Plugins', 'ibtana-visual-editor'); ?></h2>
-                                    <p>
-                                        <?php
-                                        _e(
-                                            'The following plugins are required for this template in order to work properly. Ignore if already installed.',
-                                            'ibtana-visual-editor'
-                                        );
-                                        ?>
-                                    </p>
-                                    <div class="ive-checkbox-container activated">
-                                        <?php _e('Elementor', 'ibtana-visual-editor'); ?>
-                                        <span class="ive-checkbox active">
-                                            <svg width="10" height="8" viewBox="0 0 11.2 9.1">
-                                                <polyline class="check" points="1.2,4.8 4.4,7.9 9.9,1.2 "></polyline>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div class="ive-checkbox-container">
-                                        <?php _e('Gutenberg', 'ibtana-visual-editor'); ?>
-                                        <span class="ive-checkbox active">
-                                            <svg width="10" height="8" viewBox="0 0 11.2 9.1">
-                                                <polyline class="check" points="1.2,4.8 4.4,7.9 9.9,1.2 "></polyline>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div class="ive-demo-template ive-demo-step ive-demo-step-2">
-                                    <h2><?php _e('Import Content', 'ibtana-visual-editor'); ?></h2>
-                                    <p><?php _e('This will import the template.', 'ibtana-visual-editor'); ?></p>
-                                </div>
-
-                                <div class="ive-demo-install ive-demo-step ive-demo-step-3">
-                                    <h2><?php _e('Installing...', 'ibtana-visual-editor'); ?></h2>
-                                    <p>
-                                        <?php
-                                        _e(
-                                            "Please be patient and don't refresh this page, the import process may take a while, this also depends on your server.",
-                                            'ibtana-visual-editor'
-                                        );
-                                        ?>
-                                    </p>
-                                    <div class="ive-progress-info">
-                                        <?php _e('Required plugins', 'ibtana-visual-editor'); ?><span>10%</span>
-                                    </div>
-                                    <div class="ive-installer-progress">
-                                        <div></div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="ive-demo-step-controls">
-                                <button class="ive-demo-btn ive-demo-back-btn"><?php _e('Back', 'ibtana-visual-editor'); ?></button>
-                                <ul class="ive-steps-pills">
-                                    <li class="active"><?php _e('1', 'ibtana-visual-editor'); ?></li>
-                                    <li class=""><?php _e('2', 'ibtana-visual-editor'); ?></li>
-                                    <li class=""><?php _e('3', 'ibtana-visual-editor'); ?></li>
-                                </ul>
-                                <button class="ive-demo-btn ive-demo-main-btn"><?php _e('Next', 'ibtana-visual-editor'); ?></button>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>

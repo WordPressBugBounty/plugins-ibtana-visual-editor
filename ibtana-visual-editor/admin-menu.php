@@ -611,7 +611,7 @@ class Ibtana_Visual_Editor_Menu_Class
 							<div class="ibtana-wizard-no-result">
 								<?php esc_html_e('No Result Found', 'ibtana-visual-editor'); ?>
 							</div>
-							<h3 class="ive-coming-soon"><?php esc_html_e('Coming Soon...', 'ibtana-visual-editor'); ?></h3>
+							<!-- <h3 class="ive-coming-soon"><?php esc_html_e('Coming Soon...', 'ibtana-visual-editor'); ?></h3> -->
 						</div>
 						<div class="ive-template-load-more">
 							<a href="javascript:void(0)" class="button button-primary"><?php esc_html_e('Load More...', 'ibtana-visual-editor'); ?></a>

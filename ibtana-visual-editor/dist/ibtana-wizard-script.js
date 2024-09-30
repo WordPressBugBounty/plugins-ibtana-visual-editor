@@ -371,7 +371,7 @@ var IVE_WIZARD = (function($) {
       if (will_clear) {
 
         if ( template_type === 'wordpress' ) {
-          
+
           jQuery('#pills-th-templates .ibtana-wizard-first-step-content .ive-ibtana-wizard-product-row').empty();
         } else if( template_type === 'woocommerce' ) {
           jQuery('#pills-wc-templates .ibtana-wizard-first-step-content .ive-ibtana-wizard-product-row').empty();
@@ -385,13 +385,15 @@ var IVE_WIZARD = (function($) {
               <div class="ive-o-products-image">
                 <img src="` + active_theme_data.image + `">
                 <div class="ive-templates-btn-wrap">
-                    <a class="ive-show-inner-templates-btn" href="javascript:void(0);" ive-template-parent-reference="`+active_theme_data.parent_reference+`" ive-template-text-domain="` + active_theme_data.domain + `" ive-template-demo="` + active_theme_data.demo_url + `" ive-template-image="` + active_theme_data.image + `" ive-template-title="` + active_theme_data.name + `" ive-template-slug="` + active_theme_data.slug + `" ive-template-permalink="` + active_theme_data.permalink + `" ive-template-description="` + active_theme_data.description + `" ive-is-premium="`+active_theme_data.is_premium+`">View</a>
+                    <a class="ive-show-inner-templates-btn" href="javascript:void(0);" ive-template-parent-reference="`+active_theme_data.parent_reference+`" ive-template-text-domain="` + active_theme_data.domain + `" ive-template-demo="` + active_theme_data.demo_url + `" ive-template-image="` + active_theme_data.image + `" ive-template-title="` + active_theme_data.name + `" ive-template-slug="` + active_theme_data.slug + `" ive-template-permalink="` + active_theme_data.permalink + `" ive-template-description="` + active_theme_data.description + `" ive-is-premium="`+active_theme_data.is_premium+`">Preview</a>
                     <a class="ive-show-inner-templates-btn-right" target="_blank" href="`+ active_theme_data.demo_url +`">Demo</a>
                 </div>
                 <div class="ive-template-grid-overlay"></div>
               </div>
+              <div class="free-temp-btn-box">
               <h3>` + active_theme_data.name + `</h3>
               <a href="javascript:void(0);" class="ive-activated-theme">Activated</a>
+              </div>
           </div>`
         );
       }
@@ -404,13 +406,15 @@ var IVE_WIZARD = (function($) {
                 <div class="ive-o-products-image">
                   <img src="` + free_product.image + `">
                   <div class="ive-templates-btn-wrap">
-                      <a class="ive-show-inner-templates-btn" href="javascript:void(0);" ive-template-parent-reference="`+free_product.parent_reference+`" ive-template-text-domain="` + free_product.domain + `" ive-template-demo="` + free_product.demo_url + `" ive-template-image="` + free_product.image + `" ive-template-title="` + free_product.name + `" ive-template-slug="` + free_product.slug + `" ive-template-permalink="` + free_product.permalink + `" ive-template-description="` + free_product.description + `" ive-is-premium="`+free_product.is_premium+`">View</a>
+                      <a class="ive-show-inner-templates-btn" href="javascript:void(0);" ive-template-parent-reference="`+free_product.parent_reference+`" ive-template-text-domain="` + free_product.domain + `" ive-template-demo="` + free_product.demo_url + `" ive-template-image="` + free_product.image + `" ive-template-title="` + free_product.name + `" ive-template-slug="` + free_product.slug + `" ive-template-permalink="` + free_product.permalink + `" ive-template-description="` + free_product.description + `" ive-is-premium="`+free_product.is_premium+`">Preview</a>
                       <a class="ive-show-inner-templates-btn-right" target="_blank" href="`+ free_product.demo_url +`">Demo</a>
                   </div>
                   <div class="ive-template-grid-overlay"></div>
                 </div>
+                <div class="free-temp-btn-box">
                 <h3>` + free_product.name + `</h3>
                 <a href="javascript:void(0);" class="ive-activated-theme">Activated</a>
+                </div>
             </div>`;
           jQuery('.ibtana-wizard-first-step-content .ive-ibtana-wizard-product-row').append(card_content);
         }
@@ -1207,6 +1211,24 @@ window.addEventListener( 'load', function() {
     var data_template_type = jQuery($this).attr('data-template-type');
 
     IVE_WIZARD.ibtana_visual_editor_all_template_grid( '', 1, 1, data_template_type );
+
+    if(data_template_type == 'woocommerce') {
+      jQuery('#pills-wc-templates .ive-wizard-content-menu li.step-ive-wizard-first-step').show();
+      jQuery('#pills-wc-templates .ive-wizard-content-menu li.step-ive-wizard-second-step').hide();
+      jQuery('#pills-wc-templates .ive-wizard-content-menu li.step-ive-wizard-three-step').hide();
+      jQuery('#pills-wc-templates .ive-wizard-content-menu li.step-ive-wizard-four-step').hide();
+      jQuery('#pills-wc-templates .ive-wizard-content-menu li.step-ive-wizard-five-step').hide();
+      jQuery('#pills-wc-templates .ive-wizard-content-menu li').removeClass('active-step');
+      jQuery('#pills-wc-templates .ive-wizard-content-menu li.step-ive-wizard-first-step').addClass('active-step');
+    } else {
+      jQuery('#pills-th-templates .ive-wizard-content-menu li.step-ive-wizard-first-step').show();
+      jQuery('#pills-th-templates .ive-wizard-content-menu li.step-ive-wizard-second-step').hide();
+      jQuery('#pills-th-templates .ive-wizard-content-menu li.step-ive-wizard-three-step').hide();
+      jQuery('#pills-th-templates .ive-wizard-content-menu li.step-ive-wizard-four-step').hide();
+      jQuery('#pills-th-templates .ive-wizard-content-menu li.step-ive-wizard-five-step').hide();
+      jQuery('#pills-th-templates .ive-wizard-content-menu li').removeClass('active-step');
+      jQuery('#pills-th-templates .ive-wizard-content-menu li.step-ive-wizard-first-step').addClass('active-step');
+    }
   });
 
   jQuery( document.body ).on( 'click', '#pills-th-bundle-packages-tab', function(e) {
@@ -1241,7 +1263,7 @@ window.addEventListener( 'load', function() {
   }
 
   jQuery(document.body).on("input", ".ive-dashboard-tabs-bundle-search-input", debounce(function (event) {
-    
+
     get_themes_bundles_list_dashboard_contents( jQuery(this).val(), '', 'search' );
   }, 300));
 
@@ -1284,7 +1306,7 @@ window.addEventListener( 'load', function() {
             </div>
           `;
 
-          jQuery('.ive-dashboard-tabs-bundle-wrap').append(productHtml); 
+          jQuery('.ive-dashboard-tabs-bundle-wrap').append(productHtml);
         });
 
         var pagination = result.pagination;

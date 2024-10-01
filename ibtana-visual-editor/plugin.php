@@ -3,7 +3,7 @@
  * Plugin Name:       Ibtana - WordPress Website Builder
  * Plugin URI:        https://www.vwthemes.com/products/wordpress-website-builder/
  * Description:       Build your dream WordPress website with Ibtana, a powerful website builder with customizable templates and drag-and-drop elements for customization.
- * Version:           1.2.4.4
+ * Version:           1.2.4.5
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            VowelWeb

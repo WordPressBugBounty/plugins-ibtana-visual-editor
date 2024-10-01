@@ -18,10 +18,10 @@
   			exit;
   		}
 
-      $paged      = sanitize_text_field( $_POST['paged'] );
-      $blockId    = sanitize_text_field( $_POST['blockId'] );
-      $postId     = sanitize_text_field( $_POST['postId'] );
-      $blockRaw   = sanitize_text_field( $_POST['blockName'] );
+      $paged      = sanitize_text_field( wp_unslash($_POST['paged']) );
+      $blockId    = sanitize_text_field( wp_unslash($_POST['blockId']) );
+      $postId     = sanitize_text_field( wp_unslash($_POST['postId']) );
+      $blockRaw   = sanitize_text_field( wp_unslash($_POST['blockName']) );
       $blockName  = str_replace( '_', '/', $blockRaw );
 
       if( $paged && $blockId && $postId && $blockName ) {
@@ -2416,8 +2416,11 @@
             $attributes['carouselLayoutStyle']
           );
 
+          $align = isset($attributes['align']) ? sanitize_text_field($attributes['align']) : '';
+
+
           // start the post content wrap
-          $post_loop .=  '<div class="post-content-area ' . $attributes['align'] . ' ' . $hasImage . '">';
+          $post_loop .=  '<div class="post-content-area ' . esc_attr($align) . ' ' . $hasImage . '">';
 
           if ( $attributes['displayPostImage'] && $image ) {
             $post_loop .= sprintf(

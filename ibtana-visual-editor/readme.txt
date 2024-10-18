@@ -4,7 +4,7 @@ Tags: website builder, gutenberg, One click demo Import, templates, page builder
 Requires at least: 5.2
 Tested up to: 6.6.2
 Requires PHP: 7.2
-Stable tag: 1.2.4.5
+Stable tag: 1.2.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,21 +38,21 @@ Ibtana isn't just a plugin; it's a community! Dive into a collection of stunning
 
 Ibtana Visual Editor currently includes the following blocks:
 
-* Progress Bar - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-progress-bar-block/)
-* Posttype Slider - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-latest-post-block/)
-* Advanced Separator & Spacer - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-separator-block/)
-* Advanced Button - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-button-block/)
-* Advanced Social Icon - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-icon-block/)
+* Progress Bar - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/progress-bar-block/)
+* Posttype Slider - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/posttype-slider/)
+* Advanced Separator & Spacer - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/)
+* Advanced Button - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/advanced-button/)
+* Advanced Social Icon - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/icons/)
 * Google Map - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-google-map-block/)
-* Shape Divider - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-shape-divider/)
-* Tabs - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-tab-content/)
-* Popup - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-video-popup/)
-* Accordion - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-accordion/)
-* Advanced Gallery - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-gallery/)
-* Advanced Text - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-advance-text/)
+* Shape Divider - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/divider-block/)
+* Tabs - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/tabs-button/)
+* Popup - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/popup-block/)
+* Accordion - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/accordion-block/)
+* Advanced Gallery - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/gallery-block/)
+* Advanced Text - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/advance-text-button/)
 * Countdown - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-countdown/)
-* Multiblock Slider - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-multi-block-slider/)
-* Form - [View Demo](https://www.vwthemesdemo.com/ibtana-visual-editor/form/)
+* Multiblock Slider - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/slider-block/)
+* Form - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/)
 
 ## More Info About the Blocks
 
@@ -143,6 +143,9 @@ Add contact form to your page with reCaptcha.
 17. Carousel Block.
 
 == Changelog ==
+
+= 1.2.4.6 - 2024-18-10 =
+* **Fixes** - Minor Bug Fixes.
 
 = 1.2.4.5 - 2024-01-10 =
 * **Optimization** - Plugin security optimizations.

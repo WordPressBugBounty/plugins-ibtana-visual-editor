@@ -189,7 +189,9 @@ if ( ! class_exists( 'IVE_Config' ) ) {
                 'bgOpacity'           => 1,
                 'bgColor'             => '',
                 'margin_top'          => 35,
-                'margin_bottom'       => 35
+                'margin_bottom'       => 35,
+                'margin_right'        => 0,
+                'margin_left'         => 0
               ),
           ),
           'ive/gallery'       							=>	array(

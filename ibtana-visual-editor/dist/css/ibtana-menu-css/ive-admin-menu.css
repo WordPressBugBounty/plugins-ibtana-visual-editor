@@ -1384,7 +1384,7 @@ body.toplevel_page_ibtana-visual-editor {
   text-align: center;
 }
 
-#ibtana-free-templates .ive-show-inner-templates-btn, #ibtana-free-templates .ive-premium-template-import-btn, .ibtana-wizard-four-step-content .ive-template-preview-btn {
+#ibtana-free-templates .ive-show-inner-templates-btn, #ibtana-free-templates .ive-premium-template-import-btn, .ibtana-wizard-first-step-content .ive-show-inner-templates-btn, .ibtana-wizard-four-step-content .ive-template-preview-btn {
   font-size: 17px;
   font-weight: 600;
   color: #fff;

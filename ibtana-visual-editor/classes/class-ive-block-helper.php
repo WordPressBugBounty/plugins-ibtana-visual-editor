@@ -368,7 +368,7 @@ if ( ! class_exists( 'IVE_Block_Helper' ) ) {
 					'margin-top'			=> isset($attr['margin_top']) ? $attr['margin_top'].$unit : '35'.$unit,
 					'margin-bottom'			=> isset($attr['margin_bottom']) ? $attr['margin_bottom'].$unit : '35'.$unit,
 					'margin-left'			=> isset($attr['margin_left']) ? $attr['margin_left'].$unit : 0,
-					'margin-right'			=> isset($attr['margin_right']) ? $attr['margin_right'].$unit : 0
+					'margin-right'			=> isset($attr['margin_right']) ? $attr['margin_right'].$unit : 0,
 				),
 				' .ive-google-map__iframe' => array(
 					'height'				=> isset($attr['height']) ? $attr['height'].$unit : '300'.$unit,

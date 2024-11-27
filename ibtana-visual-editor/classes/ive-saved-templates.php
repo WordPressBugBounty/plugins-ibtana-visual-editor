@@ -1,4 +1,4 @@
-<?php //self::ibtana_visual_editor_banner_head(); ?>
+<?php self::ibtana_visual_editor_banner_head(); ?>
 
 <div class="wrap">
 
@@ -25,7 +25,7 @@
   ?>
 
   <h1 class="wp-heading-inline">
-    <?php //esc_html_e( 'Ibtana templates', 'ibtana-visual-editor' ); ?>
+    <?php esc_html_e( 'Ibtana templates', 'ibtana-visual-editor' ); ?>
   </h1>
 
   <hr class="wp-header-end">
@@ -56,7 +56,7 @@
         </div>
         <div class="tablenav-pages one-page">
           <span class="displaying-num">
-            <?php
+            <?php 
               $item_count = count( $query->posts );
               // Translators: %d is the number of items found
               $text = sprintf( esc_html__( '%d item(s)', 'ibtana-visual-editor' ), $item_count );
@@ -124,7 +124,7 @@
               <?php if ( $is_iepa_activated == true ): ?>
                 <th scope="row" class="check-column">
                   <label class="screen-reader-text" for="<?php echo esc_attr( 'cb-select-' . $ibtana_template_post->ID ); ?>">
-                    <?php
+                    <?php 
                         // Translators: %s is the title of the template post
                       $select_text = sprintf( esc_html__( 'Select %s', 'ibtana-visual-editor' ), $ibtana_template_post->post_title );
                       echo esc_html( $select_text );
@@ -142,7 +142,7 @@
                 <strong>
                   <a class="row-title" href="<?php echo esc_url( 'post.php?post=' . $ibtana_template_post->ID . '&amp;action=edit' ); ?>"
                     aria-label="<?php echo esc_attr( '“' . $ibtana_template_post->post_title.'”  (Edit)' ); ?>">
-                    <?php
+                    <?php 
                       // Translators: %s is the title of the template post
                       $select_text = sprintf( esc_html__( 'Select %s', 'ibtana-visual-editor' ), $ibtana_template_post->post_title );
                       echo esc_html( $select_text );
@@ -188,7 +188,7 @@
 
               <td class="taxonomy-ibtana_template_type column-taxonomy-ibtana_template_type" data-colname="Ibtana Template Type" colspan="2">
                 <?php foreach ( wp_get_post_terms( $ibtana_template_post->ID, 'ibtana_template_type' ) as $ibtana_template_type ): ?>
-                  <a><?php
+                  <a><?php 
                     // Translators: %s is the name of the template type
                     $select_text = sprintf( esc_html__( 'Select %s', 'ibtana-visual-editor' ), $ibtana_template_type->name );
                     echo esc_html( $select_text );

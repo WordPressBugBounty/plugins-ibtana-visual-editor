@@ -2,9 +2,9 @@
 Contributors: VowelWeb
 Tags: website builder, gutenberg, One click demo Import, templates, page builder
 Requires at least: 5.2
-Tested up to: 6.6.2
+Tested up to: 6.7.1
 Requires PHP: 7.2
-Stable tag: 1.2.4.7
+Stable tag: 1.2.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,14 +43,14 @@ Ibtana Visual Editor currently includes the following blocks:
 * Advanced Separator & Spacer - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/)
 * Advanced Button - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/advanced-button/)
 * Advanced Social Icon - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/icons/)
-* Google Map - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-google-map-block/)
+* Google Map - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/)
 * Shape Divider - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/divider-block/)
 * Tabs - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/tabs-button/)
 * Popup - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/popup-block/)
 * Accordion - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/accordion-block/)
 * Advanced Gallery - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/gallery-block/)
 * Advanced Text - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/advance-text-button/)
-* Countdown - [View Demo](http://www.vwthemesdemo.com/ibtana-visual-editor/vw-countdown/)
+* Countdown - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/)
 * Multiblock Slider - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/slider-block/)
 * Form - [View Demo](https://preview.vwthemesdemo.com/ibtana-visual-editor/)
 
@@ -143,6 +143,9 @@ Add contact form to your page with reCaptcha.
 17. Carousel Block.
 
 == Changelog ==
+
+= 1.2.4.8 - 2024-27-11 =
+* **Enhancement** - Updated to submenu style.
 
 = 1.2.4.7 - 2024-31-10 =
 * **Added** - Margin settings in Google Map Block.

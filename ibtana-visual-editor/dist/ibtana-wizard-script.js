@@ -369,13 +369,7 @@ var IVE_WIZARD = (function($) {
       var free_data = data.data;
 
       if (will_clear) {
-
-        if ( template_type === 'wordpress' ) {
-
-          jQuery('#pills-th-templates .ibtana-wizard-first-step-content .ive-ibtana-wizard-product-row').empty();
-        } else if( template_type === 'woocommerce' ) {
-          jQuery('#pills-wc-templates .ibtana-wizard-first-step-content .ive-ibtana-wizard-product-row').empty();
-        }
+        jQuery('.ibtana-wizard-first-step-content .ive-ibtana-wizard-product-row').empty();
       }
 
       var active_theme_data = data.active_theme_data;
@@ -384,16 +378,13 @@ var IVE_WIZARD = (function($) {
           `<div class="ive-o-products-col ive-current-theme-card">
               <div class="ive-o-products-image">
                 <img src="` + active_theme_data.image + `">
-                <div class="ive-templates-btn-wrap">
-                    <a class="ive-show-inner-templates-btn" href="javascript:void(0);" ive-template-parent-reference="`+active_theme_data.parent_reference+`" ive-template-text-domain="` + active_theme_data.domain + `" ive-template-demo="` + active_theme_data.demo_url + `" ive-template-image="` + active_theme_data.image + `" ive-template-title="` + active_theme_data.name + `" ive-template-slug="` + active_theme_data.slug + `" ive-template-permalink="` + active_theme_data.permalink + `" ive-template-description="` + active_theme_data.description + `" ive-is-premium="`+active_theme_data.is_premium+`">Preview</a>
-                    <a class="ive-show-inner-templates-btn-right" target="_blank" href="`+ active_theme_data.demo_url +`">Demo</a>
+                <div>
+                    <a class="ive-show-inner-templates-btn" href="javascript:void(0);" ive-template-parent-reference="`+active_theme_data.parent_reference+`" ive-template-text-domain="` + active_theme_data.domain + `" ive-template-demo="` + active_theme_data.demo_url + `" ive-template-image="` + active_theme_data.image + `" ive-template-title="` + active_theme_data.name + `" ive-template-slug="` + active_theme_data.slug + `" ive-template-permalink="` + active_theme_data.permalink + `" ive-template-description="` + active_theme_data.description + `" ive-is-premium="`+active_theme_data.is_premium+`">View</a>
                 </div>
                 <div class="ive-template-grid-overlay"></div>
               </div>
-              <div class="free-temp-btn-box">
               <h3>` + active_theme_data.name + `</h3>
               <a href="javascript:void(0);" class="ive-activated-theme">Activated</a>
-              </div>
           </div>`
         );
       }
@@ -405,16 +396,13 @@ var IVE_WIZARD = (function($) {
             <div class="ive-o-products-col">
                 <div class="ive-o-products-image">
                   <img src="` + free_product.image + `">
-                  <div class="ive-templates-btn-wrap">
-                      <a class="ive-show-inner-templates-btn" href="javascript:void(0);" ive-template-parent-reference="`+free_product.parent_reference+`" ive-template-text-domain="` + free_product.domain + `" ive-template-demo="` + free_product.demo_url + `" ive-template-image="` + free_product.image + `" ive-template-title="` + free_product.name + `" ive-template-slug="` + free_product.slug + `" ive-template-permalink="` + free_product.permalink + `" ive-template-description="` + free_product.description + `" ive-is-premium="`+free_product.is_premium+`">Preview</a>
-                      <a class="ive-show-inner-templates-btn-right" target="_blank" href="`+ free_product.demo_url +`">Demo</a>
+                  <div>
+                      <a class="ive-show-inner-templates-btn" href="javascript:void(0);" ive-template-parent-reference="`+free_product.parent_reference+`" ive-template-text-domain="` + free_product.domain + `" ive-template-demo="` + free_product.demo_url + `" ive-template-image="` + free_product.image + `" ive-template-title="` + free_product.name + `" ive-template-slug="` + free_product.slug + `" ive-template-permalink="` + free_product.permalink + `" ive-template-description="` + free_product.description + `" ive-is-premium="`+free_product.is_premium+`">View</a>
                   </div>
                   <div class="ive-template-grid-overlay"></div>
                 </div>
-                <div class="free-temp-btn-box">
                 <h3>` + free_product.name + `</h3>
                 <a href="javascript:void(0);" class="ive-activated-theme">Activated</a>
-                </div>
             </div>`;
           jQuery('.ibtana-wizard-first-step-content .ive-ibtana-wizard-product-row').append(card_content);
         }
@@ -474,9 +462,8 @@ var IVE_WIZARD = (function($) {
               <div class="ive-o-products-image">
                   `+premium_badge+`
                   <img src="`+template_or_inner_page.image+`">
-                  <div class="ive-templates-btn-wrap">
+                  <div>
                       <a class="ive-template-preview-btn" ive-template-type="`+template_or_inner_page.template_type+`" ive-template-text-domain="`+template_or_inner_page.domain+`" ive-template-page-type="`+template_or_inner_page.page_type+`" ive-template-demo="`+template_or_inner_page.demo_url+`" ive-template-image="`+template_or_inner_page.image+`" ive-template-title="`+template_or_inner_page.name+`" ive-template-permalink="`+template_or_inner_page.permalink+`" ive-template-slug="`+template_or_inner_page.slug+`" ive-template-description="`+template_or_inner_page.description+`" ive-is-premium="`+template_or_inner_page.is_premium+`" ive-is-premium-theme-key-valid="`+is_premium_theme_key_valid+`" ive-template-textdomain="`+template_or_inner_page.domain+`" href="javascript:void(0);">Preview</a>
-                      <a class="ive-template-preview-btn-right" target="_blank" href="`+ template_or_inner_page.demo_url +`">Demo</a>
                   </div>
                   <div class="ive-template-grid-overlay"></div>
               </div>
@@ -1206,124 +1193,6 @@ window.addEventListener( 'load', function() {
   var next_theme_page= '';
   //---------- Ibtana Wizard Templates --------
 
-  jQuery( document.body ).on( 'click', '#pills-th-templates-tab, #pills-wc-templates-tab', function(e) {
-    var $this = jQuery( this );
-    var data_template_type = jQuery($this).attr('data-template-type');
-
-    IVE_WIZARD.ibtana_visual_editor_all_template_grid( '', 1, 1, data_template_type );
-
-    if(data_template_type == 'woocommerce') {
-      jQuery('#pills-wc-templates .ive-wizard-content-menu li.step-ive-wizard-first-step').show();
-      jQuery('#pills-wc-templates .ive-wizard-content-menu li.step-ive-wizard-second-step').hide();
-      jQuery('#pills-wc-templates .ive-wizard-content-menu li.step-ive-wizard-three-step').hide();
-      jQuery('#pills-wc-templates .ive-wizard-content-menu li.step-ive-wizard-four-step').hide();
-      jQuery('#pills-wc-templates .ive-wizard-content-menu li.step-ive-wizard-five-step').hide();
-      jQuery('#pills-wc-templates .ive-wizard-content-menu li').removeClass('active-step');
-      jQuery('#pills-wc-templates .ive-wizard-content-menu li.step-ive-wizard-first-step').addClass('active-step');
-    } else {
-      jQuery('#pills-th-templates .ive-wizard-content-menu li.step-ive-wizard-first-step').show();
-      jQuery('#pills-th-templates .ive-wizard-content-menu li.step-ive-wizard-second-step').hide();
-      jQuery('#pills-th-templates .ive-wizard-content-menu li.step-ive-wizard-three-step').hide();
-      jQuery('#pills-th-templates .ive-wizard-content-menu li.step-ive-wizard-four-step').hide();
-      jQuery('#pills-th-templates .ive-wizard-content-menu li.step-ive-wizard-five-step').hide();
-      jQuery('#pills-th-templates .ive-wizard-content-menu li').removeClass('active-step');
-      jQuery('#pills-th-templates .ive-wizard-content-menu li.step-ive-wizard-first-step').addClass('active-step');
-    }
-  });
-
-  jQuery( document.body ).on( 'click', '#pills-th-bundle-packages-tab', function(e) {
-    get_themes_bundles_list_dashboard_contents();
-  });
-
-  jQuery(document).on('click', '.plugin-activate-license', function(e) {
-    e.preventDefault();
-    jQuery('#pills-license-tab').trigger('click');
-  });
-
-  jQuery(document).on('click', '.redirect-ibtana-templates', function(e) {
-    e.preventDefault();
-    jQuery('#pills-th-templates-tab').trigger('click');
-  });
-
-  jQuery(document).on('click', '.ive-dashboard-tabs-bundle-load-more', function() {
-    var cursor = jQuery(this).attr('data-cursor');
-    get_themes_bundles_list_dashboard_contents('', cursor);
-  });
-
-  function debounce(func, delay) {
-    let timeoutId;
-    return function() {
-        const context = this;
-        const args = arguments;
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => {
-            func.apply(context, args);
-        }, delay);
-    };
-  }
-
-  jQuery(document.body).on("input", ".ive-dashboard-tabs-bundle-search-input", debounce(function (event) {
-
-    get_themes_bundles_list_dashboard_contents( jQuery(this).val(), '', 'search' );
-  }, 300));
-
-  function get_themes_bundles_list_dashboard_contents( handle = '', cursor = '', action = '' ) {
-    jQuery.ajax({
-      url:   ive_whizzie_params.ajaxurl,
-      type:  "POST",
-      data: {
-        "action" : "ive_theme_bundles_list",
-        "productHandle"   : handle,
-        "paginationParams": {
-          "cursor": cursor
-        },
-        "wpnonce": ive_whizzie_params.wpnonce,
-      },
-    }).done(function (result) {
-
-      if ( result.code == 200 && result.data.length ) {
-
-        if ( action == 'search' ) {
-          jQuery('.ive-dashboard-tabs-bundle-wrap').empty();
-        }
-
-        result.data.forEach(function(item) {
-          var product = item.node;
-          var title = product.title;
-          var handle = product.handle;
-          var imageUrl = product.images.edges.length > 0 ? product.images.edges[0].node.originalSrc : '';
-
-          var productHtml = `
-            <div class="ive-o-products-col">
-                <div class="ive-o-products-image">
-                    <img src="${imageUrl}" alt="${title}">
-                    <div>
-                        <a class="ive-template-preview-btn" target="_blank" href="https://www.vwthemes.com/products/${handle}">Buy Now</a>
-                    </div>
-                    <div class="ive-template-grid-overlay"></div>
-                </div>
-                <h3>${title}</h3>
-            </div>
-          `;
-
-          jQuery('.ive-dashboard-tabs-bundle-wrap').append(productHtml);
-        });
-
-        var pagination = result.pagination;
-        var loadMoreButton = jQuery('.ive-dashboard-tabs-bundle-load-more');
-
-        if (pagination.hasNextPage) {
-          loadMoreButton.show();
-        } else {
-          loadMoreButton.hide();
-        }
-
-        loadMoreButton.attr('data-cursor', pagination.endCursor);
-
-      }
-
-    });
-  }
 
   // --------- Free Template Button ----------
 
@@ -1503,9 +1372,8 @@ window.addEventListener( 'load', function() {
               <div class="ive-o-products-image">
                   `+premium_badge+`
                   <img src="`+template_or_inner_page.image+`">
-                  <div class="ive-templates-btn-wrap">
+                  <div>
                       <a class="ive-template-preview-btn" ive-template-type="`+template_or_inner_page.template_type+`" ive-template-text-domain="`+template_or_inner_page.domain+`" ive-template-page-type="`+template_or_inner_page.page_type+`" ive-template-demo="`+template_or_inner_page.demo_url+`" ive-template-image="`+template_or_inner_page.image+`" ive-template-title="`+template_or_inner_page.name+`" ive-template-permalink="`+template_or_inner_page.permalink+`" ive-template-slug="`+template_or_inner_page.slug+`" ive-template-description="`+template_or_inner_page.description+`" ive-is-premium="`+template_or_inner_page.is_premium+`" ive-is-premium-theme-key-valid="`+is_premium_theme_key_valid+`" ive-template-textdomain="`+template_or_inner_page.domain+`" href="javascript:void(0);">Preview</a>
-                      <a class="ive-template-preview-btn-right" target="_blank" href="`+ template_or_inner_page.demo_url +`">Demo</a>
                   </div>
                   <div class="ive-template-grid-overlay"></div>
               </div>
@@ -1566,7 +1434,6 @@ window.addEventListener( 'load', function() {
                     <img src="` + premium_product.image + `">
                     <div>
                         <a class="ive-premium-template-import-btn" href="javascript:void(0);" ive-template-demo="` + premium_product_demo_url + `" ive-template-image="` + premium_product.image + `" ive-template-title="` + premium_product_title + `" ive-template-demo-url="` + premium_product_demo_url + `" ive-template-permalink="` + premium_product_permalink + `" ive-is-key-valid="` + data.data.is_key_valid + `" ive-template-description="` + premium_product_description + `" ive-template-slug="` + premium_product.slug + `">Preview</a>
-                        <a class="ive-template-preview-btn" target="_blank" href="`+ premium_product_demo_url +`">Demo</a>
                     </div>
                     <div class="ive-template-grid-overlay"></div>
                 </div>
@@ -1590,9 +1457,6 @@ window.addEventListener( 'load', function() {
  /* --------- Load More Event --------- */
 
   jQuery( '.ibtana-wizard-first-step-content .ive-template-load-more a' ).click(function() {
-
-    const template_type = jQuery(this).closest('.tab-pane').find('.ive-ibtana-wizard-tabs-button-wrapper a.ibtana-free-template-button.active').attr('data-template-type');
-
     var page_no = parseInt( jQuery(this).attr( 'ive_current_grid_no' ) );
     var product_category = jQuery('.ibtana-wizard-first-step-content li[data-product-category].active').attr('data-product-category');
     if ( !product_category ) {
@@ -1602,7 +1466,7 @@ window.addEventListener( 'load', function() {
       '',
       page_no,
       0,
-      template_type,
+      jQuery('.ive-ibtana-wizard-button-wrapper a.ibtana-free-template-button.active').attr('data-template-type'),
       product_category
     );
   });
@@ -1671,7 +1535,7 @@ window.addEventListener( 'load', function() {
     var is_key_valid = jQuery(this).attr('ive-is-key-valid');
     var demo_description = jQuery(this).attr('ive-template-description');
 
-    demo_permalink = demo_permalink.replace("/themes", "/products");
+    demo_permalink = demo_permalink.replace("/themes", "/products") + "?ive=true";
 
     if (is_key_valid == 0) {
       jQuery('.ive-sidebar-content a.ive-plugin-btn').show();

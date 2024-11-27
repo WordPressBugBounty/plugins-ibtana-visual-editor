@@ -27,9 +27,8 @@ if ( ! class_exists( 'IVE_Admin' ) ) {
 				return;
 			}
 
-      		add_action( 'wp_ajax_ive-get-installed-theme', __CLASS__ . '::get_installed_theme' );
+      add_action( 'wp_ajax_ive-get-installed-theme', __CLASS__ . '::get_installed_theme' );
 			add_action( 'wp_ajax_ive-theme-activate', __CLASS__ . '::theme_activate' );
-			add_action( 'wp_ajax_ive_theme_bundles_list', __CLASS__ . '::ive_theme_bundles_list' );
 
 			add_action( 'wp_ajax_ive-check-plugin-exists', __CLASS__ . '::check_plugin_exists' );
 		}
@@ -133,50 +132,6 @@ if ( ! class_exists( 'IVE_Admin' ) ) {
 					'message' => __( 'Theme Successfully Activated', 'ibtana-visual-editor' ),
 				)
 			);
-		}
-
-		public static function ive_theme_bundles_list() {
-
-			$productHandle = isset($_POST['productHandle']) ? $_POST['productHandle'] : '';
-			$cursor = isset($_POST['paginationParams']['cursor']) ? $_POST['paginationParams']['cursor'] : '';
-
-			$base_url	= SHOPIFY_LICENSE_API_ENDPOINT . 'getFilteredProducts';
-			$args 		= array(
-				"productHandle"	=>	$productHandle,
-				"paginationParams" => array(
-					"cursor" => $cursor
-				)
-			);
-			$body			= wp_json_encode($args);
-			$options	= [
-				'timeout'     => 100,
-				'body'        => $body,
-				'headers'     => [
-					'Content-Type' => 'application/json',
-				],
-			];
-			$response = wp_remote_post($base_url, $options);
-
-			if (is_wp_error($response)) {
-				wp_send_json([
-					'code' => 100,
-					'data'	=> array(),
-					'msg'	=> 'Something Went Wrong!'
-				]);
-				exit;
-
-			} elseif ($response['response']['code'] === 200 && $response['response']['message'] === 'OK') {
-				$response				= json_decode($response['body']);
-				$response_data	= $response->data;
-
-				wp_send_json([
-					'code' => 200,
-					'data'	=> isset($response_data->productsArr) ? $response_data->productsArr : array(),
-					'pagination' => isset($response_data->pageInfo) ? $response_data->pageInfo : array(),
-					'msg'	=> 'Bundles list!'
-				]);
-				exit;
-			}
 		}
 
 	}

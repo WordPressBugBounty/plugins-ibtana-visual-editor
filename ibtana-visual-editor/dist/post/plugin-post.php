@@ -2418,7 +2418,6 @@
 
           $align = isset($attributes['align']) ? sanitize_text_field($attributes['align']) : '';
 
-
           // start the post content wrap
           $post_loop .=  '<div class="post-content-area ' . esc_attr($align) . ' ' . $hasImage . '">';
 

@@ -3,7 +3,7 @@
  * Plugin Name:       Ibtana - WordPress Website Builder
  * Plugin URI:        https://www.vwthemes.com/products/wordpress-website-builder/
  * Description:       Build your dream WordPress website with Ibtana, a powerful website builder with customizable templates and drag-and-drop elements for customization.
- * Version:           1.2.4.8
+ * Version:           1.2.4.9
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            VowelWeb
@@ -33,7 +33,7 @@ if( ! function_exists('get_plugin_data') ) {
   require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
 
-define( 'IVE_VER', '1.2.4.8' );
+define( 'IVE_VER', '1.2.4.9' );
 define( 'IBTANA_LICENSE_API_ENDPOINT', 'https://preview.vwthemesdemo.com/old_website/wp-json/ibtana-licence/v2/' );
 define( 'IBTANA_THEME_URL', 'https://www.vwthemes.com/' );
 
@@ -59,10 +59,7 @@ require_once IVE_DIR . 'classes/class-cpt.php';
 require_once IVE_DIR . 'classes/ive-notice.php';
 require_once IVE_DIR . 'admin-menu.php';
 
-
-
 // Admin Menu To Display Premium Products END
-
 
 require_once IVE_DIR . 'src/blocks/form/block.php';
 require_once IVE_DIR . 'src/blocks/form/fields/text/block.php';

@@ -2483,23 +2483,3 @@ a[href="admin.php?page=ibtana-visual-editor-envato"] {
   display: inline-block;
   color: #fff !important;
 }
-#toplevel_page_ibtana-visual-editor .toplevel_page_ibtana-visual-editor .wp-menu-name {
-  padding: 8px 5px 8px 36px !important;
-}
-#toplevel_page_ibtana-visual-editor .toplevel_page_ibtana-visual-editor .wp-menu-name::after, #toplevel_page_ibtana-visual-editor a[href="admin.php?page=ibtana-visual-editor-templates"]::after {
-  content: '1';
-  display: inline-block;
-  vertical-align: top;
-  box-sizing: border-box;
-  margin: 1px 0 -1px 5px;
-  padding: 0 5px;
-  min-width: 18px;
-  height: 18px;
-  border-radius: 9px;
-  background-color: #d63638;
-  color: #fff;
-  font-size: 11px;
-  line-height: 1.6;
-  text-align: center;
-  z-index: 26;
-}

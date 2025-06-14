@@ -139,7 +139,22 @@ jQuery( document ).ready( function( $ ) {
   });
   window.windowSliders = windowSliders;
 
-  $('.get-gallery-id').each(function(index,val){
+  // Removes onXXX event handlers (might need more testing here to confirm all handlers)
+  function sanitizeHTMLAttributes(html) {
+    clean = html.replace(/on[a-z]+=("|).*?.*("|)([^>]|\s+)/gi, '')
+    return clean;
+  }
+
+  // coverts back to html entities
+  sanitizeHTML = function (str) {
+    return str.replace(/[^\w. ]/gi, function (c) {
+      return '&#' + c.charCodeAt(0) + ';';
+    });
+  }
+
+  $('.get-gallery-id').each(function( index, val ) {
+    // val.outerHTML = sanitizeHTML(val.outerHTML)
+    val.innerHTML = sanitizeHTMLAttributes(val.innerHTML)
     $id = val.dataset.galleryId;
     $("#"+$id).lightGallery({
       selector: '.light_item'

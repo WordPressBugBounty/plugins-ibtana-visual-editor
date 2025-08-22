@@ -96,11 +96,15 @@ jQuery( document ).ready( function( $ ) {
     var navbtntype = $(this).attr('data-navbtntype');
 
     if (navbtntype=='icon') {
-      var navtextprevicon= `<i class="`+navtextprev+`"></i>`;
-      var navtextnexticon= `<i class="`+ navtextnext +`"></i>`;
+      // Sanitize icon class names to prevent XSS
+      var sanitizedPrevIcon = sanitizeHTMLAttributes(navtextprev);
+      var sanitizedNextIcon = sanitizeHTMLAttributes(navtextnext);
+      var navtextprevicon= `<i class="`+sanitizedPrevIcon+`"></i>`;
+      var navtextnexticon= `<i class="`+ sanitizedNextIcon +`"></i>`;
     }else{
-      var navtextprevicon= navtextprev ;
-      var navtextnexticon = navtextnext ;
+      // For text navigation, use safe text content
+      var navtextprevicon= sanitizeHTMLAttributes(navtextprev);
+      var navtextnexticon = sanitizeHTMLAttributes(navtextnext);
     }
 
     var settingData={
@@ -139,22 +143,72 @@ jQuery( document ).ready( function( $ ) {
   });
   window.windowSliders = windowSliders;
 
-  // Removes onXXX event handlers (might need more testing here to confirm all handlers)
+  // Comprehensive XSS protection - removes all HTML tags and dangerous attributes
   function sanitizeHTMLAttributes(html) {
-    clean = html.replace(/on[a-z]+=("|).*?.*("|)([^>]|\s+)/gi, '')
+    if (typeof html !== 'string') {
+      return '';
+    }
+    
+    // Remove all HTML tags
+    let clean = html.replace(/<[^>]*>/g, '');
+    
+    // Remove all on* event handlers and other dangerous attributes
+    clean = clean.replace(/on[a-z]+=("|').*?\1/gi, '');
+    
+    // Remove javascript: protocol
+    clean = clean.replace(/javascript:/gi, '');
+    
+    // Remove data: protocol (can be used for XSS)
+    clean = clean.replace(/data:/gi, '');
+    
+    // Remove vbscript: protocol
+    clean = clean.replace(/vbscript:/gi, '');
+    
+    // Remove expression() CSS function (IE XSS vector)
+    clean = clean.replace(/expression\s*\(/gi, '');
+    
+    // Remove eval() function calls
+    clean = clean.replace(/eval\s*\(/gi, '');
+    
     return clean;
   }
 
-  // coverts back to html entities
-  sanitizeHTML = function (str) {
-    return str.replace(/[^\w. ]/gi, function (c) {
-      return '&#' + c.charCodeAt(0) + ';';
-    });
+  // Comprehensive HTML sanitization - converts all special characters to HTML entities
+  function sanitizeHTML(str) {
+    if (typeof str !== 'string') {
+      return '';
+    }
+    
+    // Use a more comprehensive approach than the previous simple replacement
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#x27;')
+      .replace(/\//g, '&#x2F;')
+      .replace(/\\/g, '&#x5C;');
+  }
+
+  // Safe text insertion - prevents XSS by using textContent instead of innerHTML
+  function safeSetTextContent(element, text) {
+    if (element && typeof element.textContent !== 'undefined') {
+      element.textContent = text;
+    } else if (element && element.innerText !== 'undefined') {
+      element.innerText = text;
+    }
+  }
+
+  // Safe HTML insertion with sanitization
+  function safeSetHTML(element, html) {
+    if (element && typeof element.innerHTML !== 'undefined') {
+      element.innerHTML = sanitizeHTMLAttributes(html);
+    }
   }
 
   $('.get-gallery-id').each(function( index, val ) {
-    // val.outerHTML = sanitizeHTML(val.outerHTML)
-    val.innerHTML = sanitizeHTMLAttributes(val.innerHTML)
+    // Use safe HTML insertion to prevent XSS
+    val.innerHTML = sanitizeHTMLAttributes(val.innerHTML);
     $id = val.dataset.galleryId;
     $("#"+$id).lightGallery({
       selector: '.light_item'
@@ -174,9 +228,10 @@ jQuery( document ).ready( function( $ ) {
     var btn = $(this).attr('data-btn');
     var activecolor = $(this).attr('data-active');
     var color = $(this).attr('data-color');
-    $( "."+blockid+" .ive_about_title" ).html(heading);
-    $( "."+blockid+" .ive_about_content" ).html(content);
-    $( "."+blockid+" .btn_about" ).html(btn);
+    // Use safe HTML insertion to prevent XSS
+    $( "."+blockid+" .ive_about_title" ).html(sanitizeHTMLAttributes(heading));
+    $( "."+blockid+" .ive_about_content" ).html(sanitizeHTMLAttributes(content));
+    $( "."+blockid+" .btn_about" ).html(sanitizeHTMLAttributes(btn));
     $("a#social1").attr("href", url1!= '' ? url1 : "#");
     $("a#more_btn_url").attr("href", btn_url!= '' ? btn_url : "#");
     $("a#social2").attr("href", url2!= '' ? url2 : "#");

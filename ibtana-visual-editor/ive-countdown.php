@@ -810,7 +810,7 @@ class WP_Ivecountdown {
 					if(!empty($content)){
 						$ive .= ", onComplete: function() {
 							$('#".esc_js($id)."-".esc_js($launchtarget)."').css({'width' : '". esc_js($launchwidth)."', 'height' : '".esc_js($launchheight)."'});
-							$('#".esc_js($id)."-".esc_js($launchtarget)."').html(".esc_html($content).");
+							$('#".esc_js($id)."-".esc_js($launchtarget)."').html(".wp_kses_post($content).");
 							}";
 		}
 		$ive .= "});

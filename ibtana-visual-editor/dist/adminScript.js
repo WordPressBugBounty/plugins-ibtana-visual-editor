@@ -11,11 +11,15 @@ jQuery(document).ready(function($) {
         var navbtntype = $(this).attr('data-navbtntype');
 
         if (navbtntype=='icon') {
-          var navtextprevicon= `<i class="`+navtextprev+`"></i>`;
-          var navtextnexticon= `<i class="`+ navtextnext +`"></i>`;
+          // Sanitize icon class names to prevent XSS
+          var sanitizedPrevIcon = navtextprev.replace(/<[^>]*>/g, '').replace(/on[a-z]+=("|').*?\1/gi, '');
+          var sanitizedNextIcon = navtextnext.replace(/<[^>]*>/g, '').replace(/on[a-z]+=("|').*?\1/gi, '');
+          var navtextprevicon= `<i class="`+sanitizedPrevIcon+`"></i>`;
+          var navtextnexticon= `<i class="`+ sanitizedNextIcon +`"></i>`;
         }else{
-          var navtextprevicon= navtextprev ;
-          var navtextnexticon = navtextnext ;
+          // For text navigation, use safe text content
+          var navtextprevicon= navtextprev.replace(/<[^>]*>/g, '').replace(/on[a-z]+=("|').*?\1/gi, '');
+          var navtextnexticon = navtextnext.replace(/<[^>]*>/g, '').replace(/on[a-z]+=("|').*?\1/gi, '');
         }
 
         var settingData = {

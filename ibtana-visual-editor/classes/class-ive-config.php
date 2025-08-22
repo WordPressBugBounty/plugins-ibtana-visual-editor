@@ -45,11 +45,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 				self::$block_attributes = array(
 					'ive/ibtana-visual-editorbtn'			=>	array(
 						'slug'        => '',
-            'title'       => __( 'Button', 'ibtana-visual-editor' ),
-            'description' => __(
-							'The Button block allows you to add buttons linking to other pages on your site with advanced functionality for changing colors, font size, adding opacity, and more.',
-							'ibtana-visual-editor'
-						),
+            'title'       => 'Button',
+            'description' => 'The Button block allows you to add buttons linking to other pages on your site with advanced functionality for changing colors, font size, adding opacity, and more.',
             'default'     => true,
             'attributes'  => array(
               'btnCount'            => 1,
@@ -166,8 +163,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/page-title'       						=>	array(
             'slug'        =>	'',
-            'title'       =>	__( 'Page Title', 'ibtana-visual-editor' ),
-            'description' =>	__( 'Page Title Block gives you the flexibility to place the title of the page and display it on the web page.', 'ibtana-visual-editor' ),
+            'title'       =>	'Page Title',
+            'description' =>	'Page Title Block gives you the flexibility to place the title of the page and display it on the web page.',
             'default'     =>	true,
             'attributes'  =>	array(
               'page_title'          => true,
@@ -176,8 +173,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/google-map'      					 	=>	array(
               'slug'        => '',
-              'title'       => __( 'Google Map', 'ibtana-visual-editor' ),
-              'description' => __( 'Inserting a customizable Google map is now easy with Google Map Block. You can include a google map and enter the location name, address with functionality to zoom in and zoom out.', 'ibtana-visual-editor' ),
+              'title'       => 'Google Map',
+              'description' => 'Inserting a customizable Google map is now easy with Google Map Block. You can include a google map and enter the location name, address with functionality to zoom in and zoom out.',
               'default'     => true,
               'attributes'  => array(
                 'block_id'            => '',
@@ -196,8 +193,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/gallery'       							=>	array(
             'slug'        => '',
-            'title'       => __( 'Ibtana Gallery', 'ibtana-visual-editor' ),
-            'description' => __( 'Show splendid image galleries on your website with this simple drag and drop Galley Block. You can display a beautiful gallery of images on your website.', 'ibtana-visual-editor' ),
+            'title'       => 'Ibtana Gallery',
+            'description' => 'Show splendid image galleries on your website with this simple drag and drop Galley Block. You can display a beautiful gallery of images on your website.',
             'default'     => true,
             'attributes'  => array(
 							'uniqueID'      =>	'',
@@ -214,11 +211,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/icon'       									=>	array(
 						'slug'        => '',
-            'title'       => __( 'Icon', 'ibtana-visual-editor' ),
-            'description' => __(
-							'You will find a list of all the Font Awesome icons here. Select any of the icons you want to add to your page and you can customize it by changing the background and color.',
-							'ibtana-visual-editor'
-						),
+            'title'       => 'Icon',
+            'description' => 'You will find a list of all the Font Awesome icons here. Select any of the icons you want to add to your page and you can customize it by changing the background and color.',
             'default'     => true,
             'attributes'  => array(
 							'icons'               => array(
@@ -279,11 +273,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/separator'       						=>	array(
 						'slug'        => '',
-            'title'       => __( 'Separator', 'ibtana-visual-editor' ),
-            'description' => __(
-							'Want to separate the two content blocks on your page? Separator Block is what you are looking for. It allows you to separate your content with or without hr tag lines.',
-							'ibtana-visual-editor'
-						),
+            'title'       => 'Separator',
+            'description' => 'Want to separate the two content blocks on your page? Separator Block is what you are looking for. It allows you to separate your content with or without hr tag lines.',
             'default'     => true,
             'attributes'  => array(
               'uniqueID'            => '',
@@ -299,11 +290,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/progress-bar'       					=>	array(
 						'slug'        => '',
-            'title'       => __( 'Progress Bar', 'ibtana-visual-editor' ),
-            'description' => __(
-							'Add animated horizontal progress bars to your page and show the percentage progress. You can customize it by changing the colors and values.',
-							'ibtana-visual-editor'
-						),
+            'title'       => 'Progress Bar',
+            'description' => 'Add animated horizontal progress bars to your page and show the percentage progress. You can customize it by changing the colors and values.',
             'default'     => true,
             'attributes'  => array(
               'uniqueID'                  	=> '',
@@ -365,8 +353,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/ibtana-visual-editorheading'	=>	array(
             'slug'        => '',
-            'title'       => __( 'Advanced Text', 'ibtana-visual-editor' ),
-            'description' => __( 'Advanced Text block is useful for adding the heading, paragraph and counter to your page. With this, you can easily structure your page and make the content easily readable to your readers as well as to search engines.', 'ibtana-visual-editor' ),
+            'title'       => 'Advanced Text',
+            'description' => 'Advanced Text block is useful for adding the heading, paragraph and counter to your page. With this, you can easily structure your page and make the content easily readable to your readers as well as to search engines.',
             'default'     => true,
             'attributes'  => array(
               'uniqueID'                  =>	'',
@@ -488,11 +476,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/carousel'										=>	array(
             'slug'        =>	'',
-            'title'       =>	__( 'MultiBlock slider', 'ibtana-visual-editor' ),
-            'description' =>	__(
-							'Use this feature-rich Tab Content Block for Gutenberg block editor allowing you to place different content and blocks inside each tab. There is absolutely no limit to things you can place within each tab.',
-							'ibtana-visual-editor'
-						),
+            'title'       =>	'MultiBlock slider',
+            'description' =>	'Use this feature-rich Tab Content Block for Gutenberg block editor allowing you to place different content and blocks inside each tab. There is absolutely no limit to things you can place within each tab.',
             'default'     =>	true,
             'attributes'  =>	array(
 							'uniqueID'                  => '',
@@ -544,7 +529,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/carouselimage'								=>	array(
             'slug'        => '',
-            'title'       => __( 'Carousel Image', 'ibtana-visual-editor' ),
+            'title'       => 'Carousel Image',
             'description' => '',
             'default'     => true,
             'attributes'  => array(
@@ -565,11 +550,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
 					'ive/tabs'												=>	array(
 						'slug'				=> '',
-						'tite'				=> __('Tabs', 'ibtana-visual-editor'),
-						'description'	=> __(
-							'Use this feature-rich Tab Content Block for Gutenberg block editor allowing you to place different content and blocks inside each tab. There is absolutely no limit to things you can place within each tab.',
-							'ibtana-visual-editor'
-						),
+						'tite'				=> 'Tabs',
+						'description'	=> 'Use this feature-rich Tab Content Block for Gutenberg block editor allowing you to place different content and blocks inside each tab. There is absolutely no limit to things you can place within each tab.',
 						'default'			=> true,
 						'attributes'	=>	array(
 							'uniqueID'							=>	'',
@@ -724,8 +706,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
           'ive/accordion'       						=>	array(
 						'slug'        =>	'',
-            'title'       =>	__( 'Accordion', 'ibtana-visual-editor' ),
-            'description' =>	__( 'The Accordion Block is a simple and useful block that can be used to add the accordion drop-downs to your website.', 'ibtana-visual-editor' ),
+            'title'       =>	'Accordion',
+            'description' =>	'The Accordion Block is a simple and useful block that can be used to add the accordion drop-downs to your website.',
             'default'     =>	true,
             'attributes'  =>	array(
 							'uniqueID'						=>	'',
@@ -843,11 +825,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
   				),
 					'ive/page-title'       						=>	array(
 						'slug'        =>	'',
-            'title'       =>	__( 'Page Title', 'ibtana-visual-editor' ),
-            'description' =>	__(
-							'Page Title Block gives you the flexibility to place the title of the page and display it on the web page.',
-							'ibtana-visual-editor'
-						),
+            'title'       =>	'Page Title',
+            'description' =>	'Page Title Block gives you the flexibility to place the title of the page and display it on the web page.',
             'default'     =>	true,
             'attributes'  =>	array(
 							'page_title'          => true,
@@ -856,11 +835,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
       		),
 					'ive/google-map'       						=>	array(
             'slug'        =>	'',
-            'title'       =>	__( 'Google Map', 'ibtana-visual-editor' ),
-            'description' =>	__(
-							'Inserting a customizable Google map is now easy with Google Map Block. You can include a google map and enter the location name, address with functionality to zoom in and zoom out.',
-							'ibtana-visual-editor'
-						),
+            'title'       =>	'Google Map',
+            'description' =>	'Inserting a customizable Google map is now easy with Google Map Block. You can include a google map and enter the location name, address with functionality to zoom in and zoom out.',
             'default'     =>	true,
             'attributes'  =>	array(
               'block_id'            =>	'',
@@ -877,11 +853,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/gallery'       							=>	array(
             'slug'        =>	'',
-            'title'       =>	__( 'Ibtana Gallery', 'ibtana-visual-editor' ),
-            'description'	=>	__(
-							'Show splendid image galleries on your website with this simple drag and drop Galley Block. You can display a beautiful gallery of images on your website.',
-							'ibtana-visual-editor'
-						),
+            'title'       =>	'Ibtana Gallery',
+            'description'	=>	'Show splendid image galleries on your website with this simple drag and drop Galley Block. You can display a beautiful gallery of images on your website.',
             'default'     =>	true,
             'attributes'  =>	array(
               'uniqueID'			=>	'',
@@ -891,11 +864,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/icon'       									=>	array(
 						'slug'        =>	'',
-						'title'       =>	__( 'Icon', 'ibtana-visual-editor' ),
-						'description'	=>	__(
-							'You will find a list of all the Font Awesome icons here. Select any of the icons you want to add to your page and you can customize it by changing the background and color.',
-							'ibtana-visual-editor'
-						),
+						'title'       =>	'Icon',
+						'description'	=>	'You will find a list of all the Font Awesome icons here. Select any of the icons you want to add to your page and you can customize it by changing the background and color.',
 						'default'     =>	true,
 						'attributes'  =>	array(
 							'icons'	=> array(
@@ -956,11 +926,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/separator'	=>	array(
 						'slug'        =>	'',
-						'title'       =>	__( 'Separator', 'ibtana-visual-editor' ),
-						'description'	=>	__(
-							'Want to separate the two content blocks on your page? Separator Block is what you are looking for. It allows you to separate your content with or without hr tag lines.',
-							'ibtana-visual-editor'
-						),
+						'title'       =>	'Separator',
+						'description'	=>	'Want to separate the two content blocks on your page? Separator Block is what you are looking for. It allows you to separate your content with or without hr tag lines.',
 						'default'     =>	true,
 						'attributes'  =>	array(
 							'uniqueID'        =>	'',
@@ -974,8 +941,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/progress-bar'	=>	array(
               'slug'        => '',
-              'title'       => __( 'Progress Bar', 'ibtana-visual-editor' ),
-              'description' => __( 'Add animated horizontal progress bars to your page and show the percentage progress. You can customize it by changing the colors and values.', 'ibtana-visual-editor' ),
+              'title'       => 'Progress Bar',
+              'description' => 'Add animated horizontal progress bars to your page and show the percentage progress. You can customize it by changing the colors and values.',
               'default'     => true,
               'attributes'  => array(
                   'uniqueID'                  => '',
@@ -1021,8 +988,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/ibtana-visual-editorheading'	=>	array(
               'slug'        => '',
-              'title'       => __( 'Advanced Text', 'ibtana-visual-editor' ),
-              'description' => __( 'Advanced Text block is useful for adding the heading, paragraph and counter to your page. With this, you can easily structure your page and make the content easily readable to your readers as well as to search engines.', 'ibtana-visual-editor' ),
+              'title'       => 'Advanced Text',
+              'description' => 'Advanced Text block is useful for adding the heading, paragraph and counter to your page. With this, you can easily structure your page and make the content easily readable to your readers as well as to search engines.',
               'default'     => true,
               'attributes'  => array(
                   'uniqueID'                  => '',
@@ -1136,8 +1103,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/carousel'       							=>	array(
               'slug'        => '',
-              'title'       => __( 'MultiBlock slider', 'ibtana-visual-editor' ),
-              'description' => __( 'Use this feature-rich Tab Content Block for Gutenberg block editor allowing you to place different content and blocks inside each tab. There is absolutely no limit to things you can place within each tab.', 'ibtana-visual-editor' ),
+              'title'       => 'MultiBlock slider',
+              'description' => 'Use this feature-rich Tab Content Block for Gutenberg block editor allowing you to place different content and blocks inside each tab. There is absolutely no limit to things you can place within each tab.',
               'default'     => true,
               'attributes'  => array(
                   'uniqueID'                  => '',
@@ -1189,7 +1156,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
 					'ive/slide'												=>	array(
 						'slug'        => '',
-						'title'       => __( 'slides', 'ibtana-visual-editor' ),
+						'title'       => 'slides',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1199,7 +1166,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
           'ive/carouselimage'       				=>	array(
               'slug'        => '',
-              'title'       => __( 'Carousel Image', 'ibtana-visual-editor' ),
+              'title'       => 'Carousel Image',
               'description' => '',
               'default'     => true,
               'attributes'  => array(
@@ -1220,8 +1187,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
 					'ive/tabs'												=>	array(
 					     'slug'				=> '',
-					     'tite'				=> __('Tabs', 'ibtana-visual-editor'),
-					     'description'=> __('Use this feature-rich Tab Content Block for Gutenberg block editor allowing you to place different content and blocks inside each tab. There is absolutely no limit to things you can place within each tab.', 'ibtana-visual-editor'),
+					     'tite'				=> 'Tabs',
+					     'description'=> 'Use this feature-rich Tab Content Block for Gutenberg block editor allowing you to place different content and blocks inside each tab. There is absolutely no limit to things you can place within each tab.',
 					     'default'		=> true,
 					     'attributes'	=>array(
 					         'uniqueID'                  => '',
@@ -1320,8 +1287,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
           'ive/accordion'       						=>	array(
               'slug'        => '',
-              'title'       => __( 'Accordion', 'ibtana-visual-editor' ),
-              'description' => __( 'The Accordion Block is a simple and useful block that can be used to add the accordion drop-downs to your website.', 'ibtana-visual-editor' ),
+              'title'       => 'Accordion',
+              'description' => 'The Accordion Block is a simple and useful block that can be used to add the accordion drop-downs to your website.',
               'default'     => true,
               'attributes'  => array(
                   'uniqueID'            => '',
@@ -1388,7 +1355,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
           ),
           'ive/pane'       									=>	array(
               'slug'        => '',
-              'title'       => __( 'Pane', 'ibtana-visual-editor' ),
+              'title'       => 'Pane',
               'description' => '',
               'default'     => true,
               'attributes'  => array(
@@ -1400,7 +1367,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
 					'ive/ive-form' 					=> array(
 						'slug'        => '',
-						'title'       => __( 'Form', 'ibtana-visual-editor' ),
+						'title'       => 'Form',
 						'description' => '',
 						'attributes'	=> 	array(
 							'letterSpacing'		=> '',
@@ -1421,7 +1388,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 
 					'ive/form-field-checkbox'       	=>	array(
 						'slug'        => '',
-						'title'       => __( 'Checkbox', 'ibtana-visual-editor' ),
+						'title'       => 'Checkbox',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1468,7 +1435,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
 					'ive/form-field-date'       			=>	array(
 						'slug'        => '',
-						'title'       => __( 'Date', 'ibtana-visual-editor' ),
+						'title'       => 'Date',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1515,7 +1482,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
 					'ive/form-field-email'       			=>	array(
 						'slug'        => '',
-						'title'       => __( 'Email', 'ibtana-visual-editor' ),
+						'title'       => 'Email',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1562,7 +1529,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
 					'ive/form-field-name'       			=>	array(
 						'slug'        => '',
-						'title'       => __( 'Name', 'ibtana-visual-editor' ),
+						'title'       => 'Name',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1609,7 +1576,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
 					'ive/form-field-number'       		=>	array(
 						'slug'        => '',
-						'title'       => __( 'Number', 'ibtana-visual-editor' ),
+						'title'       => 'Number',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1656,7 +1623,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
 					'ive/form-field-phone'       			=>	array(
 						'slug'        => '',
-						'title'       => __( 'Phone', 'ibtana-visual-editor' ),
+						'title'       => 'Phone',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1703,7 +1670,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
 					'ive/form-field-radio'       			=>	array(
 						'slug'        => '',
-						'title'       => __( 'Radio', 'ibtana-visual-editor' ),
+						'title'       => 'Radio',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1750,7 +1717,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
 					'ive/form-field-select'       		=>	array(
 						'slug'        => '',
-						'title'       => __( 'Select', 'ibtana-visual-editor' ),
+						'title'       => 'Select',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1797,7 +1764,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
 					'ive/form-field-text'       			=>	array(
 						'slug'        => '',
-						'title'       => __( 'Text', 'ibtana-visual-editor' ),
+						'title'       => 'Text',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1844,7 +1811,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
 					'ive/form-field-textarea'       	=>	array(
 						'slug'        => '',
-						'title'       => __( 'Text', 'ibtana-visual-editor' ),
+						'title'       => 'Text',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1891,7 +1858,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
 					'ive/form-field-url'       				=>	array(
 						'slug'        => '',
-						'title'       => __( 'Text', 'ibtana-visual-editor' ),
+						'title'       => 'Text',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1938,7 +1905,7 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 					),
 					'ive/button-single'       				=>	array(
 						'slug'        => '',
-						'title'       => __( 'Text', 'ibtana-visual-editor' ),
+						'title'       => 'Text',
 						'description' => '',
 						'default'     => true,
 						'attributes'  => array(
@@ -1983,11 +1950,8 @@ if ( ! class_exists( 'IVE_Config' ) ) {
 
 					'ive/ive-productscarousel'				=>	array(
 						'slug'        =>	'',
-						'title'       =>	__( 'Posttype Slider', 'ibtana-visual-editor' ),
-						'description' =>	__(
-							'Do not limit yourself to showing only particular products. Use the Product Slider block to create a separate category of your favorite products for featuring it on the slider.',
-							'ibtana-visual-editor'
-						),
+						'title'       =>	'Posttype Slider',
+						'description' =>	'Do not limit yourself to showing only particular products. Use the Product Slider block to create a separate category of your favorite products for featuring it on the slider.',
 						'default'     =>	true,
 						'attributes'  =>	array(
 							'uniqueID'												=>	'',

@@ -158,7 +158,9 @@ var IVE_WIZARD = (function($) {
 
       if ( data.data.hasOwnProperty( 'bundle_text_message' ) ) {
         if ( data.data.bundle_text_message != "" ) {
-          jQuery( '.ive-bundle-text' ).html( data.data.bundle_text_message );
+          // Sanitize bundle text message to prevent XSS
+          const sanitizedBundleText = data.data.bundle_text_message.replace(/<script[^>]*>.*?<\/script>/gi, '').replace(/on[a-z]+=("|').*?\1/gi, '');
+          jQuery( '.ive-bundle-text' ).html( sanitizedBundleText );
           jQuery( '.ive-bundle-text' ).show();
         } else {
           jQuery( '.ive-bundle-text' ).hide();

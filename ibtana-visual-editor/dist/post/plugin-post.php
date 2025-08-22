@@ -2379,7 +2379,8 @@
             $dataprev = json_encode( $attributes['navTextPrevicon'] );
             $datanext = json_encode( $attributes['navTextNexticon'] );
           } else {
-            $dataprev= $attributes['navTextPrev']; $datanext= $attributes['navTextNext'];
+            $dataprev = esc_attr( $attributes['navTextPrev'] ); 
+            $datanext = esc_attr( $attributes['navTextNext'] );
           }
 
           $wraper_before .=  '<div id="ive-posttype-carousel'.$uniqueID.'" class="ive-carousel-content-wrap ive-product-slider-hidden owl-theme owl-carousel '.$className.' align'.$attributes['postBlockWidth'].'" data-unique='.$uniqueID.' data-margin='.$attributes['slideMargin'].' data-stagePadding='.$stagePadding.' data-rewind='.$rewind.' data-autoplay='.$autoPLay.'

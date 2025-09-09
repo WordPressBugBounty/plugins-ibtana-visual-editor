@@ -185,7 +185,7 @@ class Ibtana_Visual_Editor_Init_Class {
         'placeholder_image'                   =>  plugins_url('ibtana-visual-editor') . '/dist/images/placeholder.png',
         'custom_text_domain'                  =>  defined( 'CUSTOM_TEXT_DOMAIN' ) ? CUSTOM_TEXT_DOMAIN : '',
         'ive_add_on_keys'                     =>  apply_filters( 'ive_add_on_license_info', [] ),
-        'wpnonce' 										        =>  wp_create_nonce( 'ive_whizzie_nonce' ),
+        'wpnonce' 										        =>  apply_filters( 'ive_template_nonce_access', ( current_user_can( 'delete_ibtana_templates' ) || current_user_can( 'manage_options' ) ) ? wp_create_nonce( 'ive_whizzie_nonce' ) : '', $current_user ),
         'is_woocommerce_available'            =>  class_exists( 'woocommerce' ) ? true : false,
         'post_type'                           =>  get_post_type(),
         'wp_rest_nonce'                       => wp_create_nonce('wp_rest'),

@@ -95,16 +95,12 @@ jQuery( document ).ready( function( $ ) {
     var navtextnext = $(this).attr('data-navtextnext');
     var navbtntype = $(this).attr('data-navbtntype');
 
-    if (navbtntype=='icon') {
-      // Sanitize icon class names to prevent XSS
-      var sanitizedPrevIcon = sanitizeHTMLAttributes(navtextprev);
-      var sanitizedNextIcon = sanitizeHTMLAttributes(navtextnext);
-      var navtextprevicon= `<i class="`+sanitizedPrevIcon+`"></i>`;
-      var navtextnexticon= `<i class="`+ sanitizedNextIcon +`"></i>`;
-    }else{
-      // For text navigation, use safe text content
-      var navtextprevicon= sanitizeHTMLAttributes(navtextprev);
-      var navtextnexticon = sanitizeHTMLAttributes(navtextnext);
+    if (navbtntype == 'icon') {
+      var navtextprevicon = window.DOMPurify ? `<i class="${window.DOMPurify.sanitize(navtextprev)}"></i>` : `<i class="${navtextprev}"></i>`;
+      var navtextnexticon = window.DOMPurify ? `<i class="${window.DOMPurify.sanitize(navtextnext)}"></i>` : `<i class="${navtextnext}"></i>`;
+    } else {
+      var navtextprevicon = window.DOMPurify ? window.DOMPurify.sanitize(navtextprev) : navtextprev;
+      var navtextnexticon = window.DOMPurify ? window.DOMPurify.sanitize(navtextnext) : navtextnext;
     }
 
     var settingData={
@@ -173,42 +169,9 @@ jQuery( document ).ready( function( $ ) {
     return clean;
   }
 
-  // Comprehensive HTML sanitization - converts all special characters to HTML entities
-  function sanitizeHTML(str) {
-    if (typeof str !== 'string') {
-      return '';
-    }
-    
-    // Use a more comprehensive approach than the previous simple replacement
-    return str
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#x27;')
-      .replace(/\//g, '&#x2F;')
-      .replace(/\\/g, '&#x5C;');
-  }
-
-  // Safe text insertion - prevents XSS by using textContent instead of innerHTML
-  function safeSetTextContent(element, text) {
-    if (element && typeof element.textContent !== 'undefined') {
-      element.textContent = text;
-    } else if (element && element.innerText !== 'undefined') {
-      element.innerText = text;
-    }
-  }
-
-  // Safe HTML insertion with sanitization
-  function safeSetHTML(element, html) {
-    if (element && typeof element.innerHTML !== 'undefined') {
-      element.innerHTML = sanitizeHTMLAttributes(html);
-    }
-  }
-
   $('.get-gallery-id').each(function( index, val ) {
     // Use safe HTML insertion to prevent XSS
-    val.innerHTML = sanitizeHTMLAttributes(val.innerHTML);
+    val.innerHTML = window.DOMPurify.sanitize(val.innerHTML);
     $id = val.dataset.galleryId;
     $("#"+$id).lightGallery({
       selector: '.light_item'
@@ -229,9 +192,9 @@ jQuery( document ).ready( function( $ ) {
     var activecolor = $(this).attr('data-active');
     var color = $(this).attr('data-color');
     // Use safe HTML insertion to prevent XSS
-    $( "."+blockid+" .ive_about_title" ).html(sanitizeHTMLAttributes(heading));
-    $( "."+blockid+" .ive_about_content" ).html(sanitizeHTMLAttributes(content));
-    $( "."+blockid+" .btn_about" ).html(sanitizeHTMLAttributes(btn));
+    $( "."+blockid+" .ive_about_title" ).html(window.DOMPurify.sanitize(heading));
+    $( "."+blockid+" .ive_about_content" ).html(window.DOMPurify.sanitize(content));
+    $( "."+blockid+" .btn_about" ).html(window.DOMPurify.sanitize(btn));
     $("a#social1").attr("href", url1!= '' ? url1 : "#");
     $("a#more_btn_url").attr("href", btn_url!= '' ? btn_url : "#");
     $("a#social2").attr("href", url2!= '' ? url2 : "#");

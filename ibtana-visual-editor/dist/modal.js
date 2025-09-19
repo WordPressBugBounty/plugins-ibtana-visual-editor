@@ -851,8 +851,11 @@
     </div>`;
     document.querySelector('body').appendChild(qtModal);
     // Sanitize HTML content to prevent XSS
-    qtModal.innerHTML = html.replace(/<script[^>]*>.*?<\/script>/gi, '').replace(/on[a-z]+=("|').*?\1/gi, '');
-
+    if (window.DOMPurify) {
+      qtModal.innerHTML = window.DOMPurify.sanitize(html);
+    } else {
+      qtModal.innerHTML = html;
+    }
 
     if ( ibtana_visual_editor_modal_js.post_type == "page" || ibtana_visual_editor_modal_js.post_type == "post" ) {
       get_modal_contents();
@@ -891,8 +894,11 @@
         if ( data.data.hasOwnProperty( 'modal_banner_message' ) ) {
           if ( data.data.modal_banner_message != '' ) {
             // Sanitize banner message to prevent XSS
-            const sanitizedMessage = data.data.modal_banner_message.replace(/<script[^>]*>.*?<\/script>/gi, '').replace(/on[a-z]+=("|').*?\1/gi, '');
-            $( '#myUpcomingModal .template-buy-banner' ).html( sanitizedMessage );
+            if (window.DOMPurify) {
+              $('#myUpcomingModal .template-buy-banner').html(window.DOMPurify.sanitize(data.data.modal_banner_message));
+            } else {
+              $('#myUpcomingModal .template-buy-banner').html(data.data.modal_banner_message);
+            }
           }
         }
       });
@@ -2108,8 +2114,11 @@
         if ( data.data.hasOwnProperty( 'bundle_text_message' ) ) {
           if ( data.data.bundle_text_message != "" ) {
             // Sanitize bundle text message to prevent XSS
-            const sanitizedBundleText = data.data.bundle_text_message.replace(/<script[^>]*>.*?<\/script>/gi, '').replace(/on[a-z]+=("|').*?\1/gi, '');
-            jQuery( '.ive-bundle-text' ).html( sanitizedBundleText );
+            if (window.DOMPurify) {
+              jQuery('.ive-bundle-text').html(window.DOMPurify.sanitize(data.data.bundle_text_message));
+            } else {
+              jQuery('.ive-bundle-text').html(data.data.bundle_text_message);
+            }
             jQuery( '.ive-bundle-text' ).show();
           } else {
             jQuery( '.ive-bundle-text' ).hide();
@@ -2278,8 +2287,11 @@
         if ( data.data.hasOwnProperty( 'bundle_text_message' ) ) {
           if ( data.data.bundle_text_message != "" ) {
             // Sanitize bundle text message to prevent XSS
-            const sanitizedBundleText = data.data.bundle_text_message.replace(/<script[^>]*>.*?<\/script>/gi, '').replace(/on[a-z]+=("|').*?\1/gi, '');
-            jQuery( '.ive-bundle-text' ).html( sanitizedBundleText );
+            if (window.DOMPurify) {
+              jQuery('.ive-bundle-text').html(window.DOMPurify.sanitize(data.data.bundle_text_message));
+            } else {
+              jQuery('.ive-bundle-text').html(data.data.bundle_text_message);
+            }
             jQuery( '.ive-bundle-text' ).show();
           } else {
             jQuery( '.ive-bundle-text' ).hide();

@@ -144,10 +144,21 @@ class Ibtana_Visual_Editor_Init_Class {
     }
 
     wp_enqueue_script( 'updates' );
+    
+    // Enqueue DOMPurify for XSS protection
+    wp_register_script(
+      'dompurify',
+      plugins_url( 'dist/js/purify.min.js', dirname(__FILE__) ),
+      array(),
+      IVE_VER,
+      true
+    );
+    wp_enqueue_script( 'dompurify' );
+    
     wp_register_script(
       'ibtana-visual-editor-modal-js',
       plugins_url( 'dist/modal.js', dirname(__FILE__) ),
-      array( 'jquery' ),
+      array( 'jquery', 'dompurify' ),
       IVE_VER,
       true
     );
@@ -387,7 +398,18 @@ class Ibtana_Visual_Editor_Init_Class {
 
     wp_enqueue_style('ibtana-visual-editor-owl-css',plugins_url('dist/assets/owl.carousel.css', dirname(__FILE__)));
     wp_enqueue_script('ibtana-visual-editor-owl', plugins_url('/dist/owl.carousel.js', dirname(__FILE__)), array( 'jquery'), '1.0', true);
-    wp_enqueue_script('ibtana-visual-editor-scripts', plugins_url('/dist/scripts.js', dirname(__FILE__)), array( 'jquery'), '1.0', true);
+    
+    // Enqueue DOMPurify for frontend XSS protection
+    wp_register_script(
+      'dompurify-frontend',
+      plugins_url( 'dist/js/purify.min.js', dirname(__FILE__) ),
+      array(),
+      IVE_VER,
+      true
+    );
+    wp_enqueue_script( 'dompurify-frontend' );
+    
+    wp_enqueue_script('ibtana-visual-editor-scripts', plugins_url('/dist/scripts.js', dirname(__FILE__)), array( 'jquery', 'dompurify-frontend'), '1.0', true);
 
     $style = 'bootstrap';
     if( ( ! wp_style_is( $style, 'queue' ) ) && ( ! wp_style_is( $style, 'done' ) ) ) {

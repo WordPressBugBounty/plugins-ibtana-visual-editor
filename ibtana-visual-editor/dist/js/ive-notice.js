@@ -218,30 +218,11 @@
           $.post(
             ive_notice_params.IBTANA_LICENSE_API_ENDPOINT + 'get_client_meta_box_info',
             {
-              "theme_text_domain":  ive_notice_params.free_theme_text_domain
+              "theme_text_domain": ive_notice_params.free_theme_text_domain
             },
             function ( data ) {
-              if ( data.data.is_found ) {
-                var name      = data.data.is_found.name;
-                var permalink = data.data.is_found.permalink;
-                permalink = permalink.replace("/themes", "/products");
-
-                $( '#ive-admin-notice' ).append(
-                  `<div class="notice notice-info is-dismissible">
-                    <p>
-                      Try Our Premium <strong>${name}</strong> With Extraodnary Features At Just <strong>$36</strong> Use Coupon <strong>"IBPro10".</strong>
-                    </p>
-                    <p>
-                      <a target="_blank" href="${permalink}" class="button button-primary">
-                        Buy Now
-                      </a>
-                    </p>
-                    <button type="button" class="notice-dismiss">
-                      <span class="screen-reader-text">Dismiss this notice.</span>
-                    </button>
-                  </div>`
-                );
-                $( '#ive-admin-notice' ).show();
+              if ( data.data.is_found && data.data.is_found.promotional_html ) {
+                $( '#ive-admin-notice' ).append( data.data.is_found.promotional_html ).show();
               }
             }
           );

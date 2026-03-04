@@ -670,6 +670,9 @@
         'letterSpacingT' => array(
           'type' => 'number'
         ),
+        'titleLineHeight' => array(
+          'type' => 'number'
+        ),
         'typographyT' => array(
           'type' => 'string',
           'default' => ''

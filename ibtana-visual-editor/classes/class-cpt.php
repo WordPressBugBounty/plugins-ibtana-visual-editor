@@ -402,42 +402,42 @@ class IVE_Ibtana_CPT {
   }
 
 
-  public function ive_delete_saved_all_ibtana_templates() {
-    // Check for nonce security
-    if ( ! isset( $_POST['wpnonce'] ) || ! wp_verify_nonce( $_POST['wpnonce'], 'ive_whizzie_nonce' ) ) {
-      exit;
-    }
-
-    if ( empty( $_POST['post_ids'] ) ) {
-      exit;
-    }
-
-    $_POST_post_ids = IVE_Loader::ive_sanitize_array( $_POST['post_ids'] );
-
-    $deleted = [];
-
-    foreach ( $_POST_post_ids as $post_id ) {
-      $post = get_post( $post_id );
-
-      // Skip if post doesn’t exist or isn’t ibtana_template
-      if ( ! $post || $post->post_type !== 'ibtana_template' ) {
-        continue;
-      }
-
-      // Check user permission for this specific post
-      if ( current_user_can( 'delete_post', $post_id ) ) {
-        if ( wp_delete_post( $post_id, true ) ) {
-          $deleted[] = $post_id;
+    public function ive_delete_saved_all_ibtana_templates() {
+        // Check for nonce security
+        if ( ! isset( $_POST['wpnonce'] ) || ! wp_verify_nonce( $_POST['wpnonce'], 'ive_whizzie_nonce' ) ) {
+            exit;
         }
-      }
-    }
 
-    if ( ! empty( $deleted ) ) {
-      wp_send_json_success( [ 'deleted' => $deleted ] );
-    } else {
-      wp_send_json_error( [ 'message' => 'No posts deleted (insufficient permissions or invalid post type)' ] );
+        if ( empty( $_POST['post_ids'] ) ) {
+            exit;
+        }
+
+        $_POST_post_ids = IVE_Loader::ive_sanitize_array( $_POST['post_ids'] );
+
+        $deleted = [];
+
+        foreach ( $_POST_post_ids as $post_id ) {
+            $post = get_post( $post_id );
+
+            // Skip if post doesn’t exist or isn’t ibtana_template
+            if ( ! $post || $post->post_type !== 'ibtana_template' ) {
+                continue;
+            }
+
+            // Check user permission for this specific post
+            if ( current_user_can( 'delete_post', $post_id ) ) {
+                if ( wp_delete_post( $post_id, true ) ) {
+                    $deleted[] = $post_id;
+                }
+            }
+        }
+
+        if ( ! empty( $deleted ) ) {
+            wp_send_json_success( [ 'deleted' => $deleted ] );
+        } else {
+            wp_send_json_error( [ 'message' => 'No posts deleted (insufficient permissions or invalid post type)' ] );
+        }
     }
-  }
 
 
   public function ive_delete_saved_single_ibtana_template() {

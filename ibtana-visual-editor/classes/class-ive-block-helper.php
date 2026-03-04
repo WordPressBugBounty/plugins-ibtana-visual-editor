@@ -3792,6 +3792,7 @@ if ( ! class_exists( 'IVE_Block_Helper' ) ) {
 			}
 
 			$titleLetterSpacing   = isset($attr['letterSpacingT']) ? $attr['letterSpacingT'].'px' : '0px';
+			$titleLineHeight      = isset($attr['titleLineHeight']) ? $attr['titleLineHeight'].'px' : '0px';
 			$PMLetterSpacing      = isset($attr['letterSpacingPM']) ? $attr['letterSpacingPM'].'px' : '0px';
 			$letterSpacingPrice = isset( $attr['letterSpacingPrice'] ) ? $attr['letterSpacingPrice'] : '0';
 			$contentLetterSpacing = isset($attr['letterSpacingC']) ? $attr['letterSpacingC'].'px' : '0px';
@@ -3843,6 +3844,7 @@ if ( ! class_exists( 'IVE_Block_Helper' ) ) {
 					'font-weight' => $fontWeightT,
           			'font-style' => $fontStyleT,
           			'letter-spacing' => $titleLetterSpacings,
+					'line-height' => $titleLineHeight,
           			'text-transform' => isset($attr['titleTransform']),
 				),
 				' .ibtana-product-name-'.$uniqueID.' h6, .ive-post-slider-parent'.$uniqueID.' .ive-inner-post-content .post-meta , .ive-post-slider-parent'.$uniqueID.' .ive_latest_post_date_img' => array(

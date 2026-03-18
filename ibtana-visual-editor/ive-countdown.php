@@ -634,66 +634,66 @@ class WP_Ivecountdown {
 		$ive .= '<div class="'.esc_attr($style."-countdown").'">';
 		$ive .= '<div id="'.esc_attr($id."-tophtml").'" class="'.esc_attr($style."-tophtml").'">';
 	    if($before){
-	        $ive .=  htmlspecialchars_decode($before);
+	        $ive .=  wp_kses_post($before);
 	    }
 		$ive .=  '</div>';
 		$ive .= '<style>';
-		$ive .= '@import url("https://fonts.googleapis.com/css2?family='.$fontfamilyname.':wght@'.$fontweight.'&display=swap");';
+		$ive .= '@import url("https://fonts.googleapis.com/css2?family='.esc_attr($fontfamilyname).':wght@'.esc_attr($fontweight).'&display=swap");';
 		$ive .= '
-		.countdown-style-'.$id.'{
-			background: '.$backgroundcolor.' !important;
-			color: '.$textcolor.' !important;
-			border: '.$borderwidth.'px solid '.$bordercolor.' !important;
-			border-radius: '.$borderradius.'px !important;
-			margin: '.$margintb.'px '.$marginlr.'px !important;
+		.countdown-style-'.esc_attr($id).'{
+			background: '.esc_attr($backgroundcolor).' !important;
+			color: '.esc_attr($textcolor).' !important;
+			border: '.esc_attr($borderwidth).'px solid '.esc_attr($bordercolor).' !important;
+			border-radius: '.esc_attr($borderradius).'px !important;
+			margin: '.esc_attr($margintb).'px '.esc_attr($marginlr).'px !important;
 		}
-		.countdown-width-height'.$id.':hover{
-		  color: '.$textcolorhov.' !important;
+		.countdown-width-height'.esc_attr($id).':hover{
+		  color: '.esc_attr($textcolorhov).' !important;
 		}
-		.countdown-style-'.$id.':hover{
-			border: '.$borderwidth.'px solid '.$bordercolorhov.' !important;
+		.countdown-style-'.esc_attr($id).':hover{
+			border: '.esc_attr($borderwidth).'px solid '.esc_attr($bordercolorhov).' !important;
 		}
-		.countdown-title-color-'.$id.'{
-			color: '.$textcolor.' !important;
-			font-family: '.$fonttypography.' !important;
-			font-weight: '.$fontweight.' !important;
-			font-style: '.$fontstyle.' !important;
-			letter-spacing: '.$letterspacing.'px !important;
-			text-transform: '.$texttransform.' !important;
+		.countdown-title-color-'.esc_attr($id).'{
+			color: '.esc_attr($textcolor).' !important;
+			font-family: '.esc_attr($fonttypography).' !important;
+			font-weight: '.esc_attr($fontweight).' !important;
+			font-style: '.esc_attr($fontstyle).' !important;
+			letter-spacing: '.esc_attr($letterspacing).'px !important;
+			text-transform: '.esc_attr($texttransform).' !important;
 		}
 		@media screen and (max-width: 767px){
-			.countdown-title-color-'.$id.'{
-				text-align: '.$mobalign.' !important;
-				font-size:'.$moblabelfontsize.'px !important;
+			.countdown-title-color-'.esc_attr($id).'{
+				text-align: '.esc_attr($mobalign).' !important;
+				font-size:'.esc_attr($moblabelfontsize).'px !important;
 			}
-			.countdown-number-fontsize-'.$id.'{
-				font-size:'.$mobnumberfontsize.'px !important;
+			.countdown-number-fontsize-'.esc_attr($id).'{
+				font-size:'.esc_attr($mobnumberfontsize).'px !important;
 			}
 		}
 		@media screen and (min-width: 768px) and (max-width: 1023px){
-			.countdown-title-color-'.$id.'{
-				text-align: '.$tabalign.' !important;
-				font-size:'.$tablabelfontsize.'px !important;
+			.countdown-title-color-'.esc_attr($id).'{
+				text-align: '.esc_attr($tabalign).' !important;
+				font-size:'.esc_attr($tablabelfontsize).'px !important;
 			}
-			.countdown-number-fontsize-'.$id.'{
-				font-size:'.$tabnumberfontsize.'px !important;
+			.countdown-number-fontsize-'.esc_attr($id).'{
+				font-size:'.esc_attr($tabnumberfontsize).'px !important;
 			}
 		}
 		@media screen and (min-width: 1024px){
-			.countdown_main_'.$id.'{
-				justify-content:'.$tabalignment.';
+			.countdown_main_'.esc_attr($id).'{
+				justify-content:'.esc_attr($tabalignment).';
 				display:flex;
 			}
-			.countdown-title-color-'.$id.'{
-				text-align: '.$deskalign.' !important;
-				font-size:'.$desklabelfontsize.'px !important;
+			.countdown-title-color-'.esc_attr($id).'{
+				text-align: '.esc_attr($deskalign).' !important;
+				font-size:'.esc_attr($desklabelfontsize).'px !important;
 			}
-			.countdown-width-height'.$id.'{
-				width:'.$deskwidth.'px !important;
-				height:'.$deskheight.'px !important;
+			.countdown-width-height'.esc_attr($id).'{
+				width:'.esc_attr($deskwidth).'px !important;
+				height:'.esc_attr($deskheight).'px !important;
 			}
-			.countdown-number-fontsize-'.$id.'{
-				font-size:'.$desknumberfontsize.'px !important;
+			.countdown-number-fontsize-'.esc_attr($id).'{
+				font-size:'.esc_attr($desknumberfontsize).'px !important;
 			}
 		}
 		';
@@ -774,11 +774,9 @@ class WP_Ivecountdown {
 
 		$ive .= '<div id="'.esc_attr($id.'-bothtml').'" class="'.esc_attr($style.'-bothtml').'">';
 		if($after){
-			$ive .= htmlspecialchars_decode($after);
+			$ive .= wp_kses_post($after);
 		}
 		$ive .= '</div></div></div>';
-
-		$lt = date( 'n/j/Y H:i:s', strtotime(current_time('mysql')) );
 
 		if(is_numeric($launchwidth)){
 			$launchwidth .= 'px';
@@ -840,5 +838,3 @@ class WP_Ivecountdown {
 
 }
 $WP_Ivecountdown = new WP_Ivecountdown;
-
-?>

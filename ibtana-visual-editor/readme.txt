@@ -4,7 +4,7 @@ Tags: website builder, gutenberg, One click demo Import, templates, page builder
 Requires at least: 5.2
 Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 1.2.5.7
+Stable tag: 1.2.5.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -144,7 +144,11 @@ Add contact form to your page with reCaptcha.
 
 == Changelog ==
 
-= 1.2.5.7 - 2025-28-02 =
+= 1.2.5.8 - 2026-04-03 =
+* **Fixes** - Security patches.
+* **Optimization** - Plugin security optimizations.
+
+= 1.2.5.7 - 2026-28-02 =
 * **Added** - Added Line Height Setting in Posttype Slider.
 
 = 1.2.5.6 - 2025-15-12 =

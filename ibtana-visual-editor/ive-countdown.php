@@ -352,6 +352,107 @@ class WP_Ivecountdown {
 	    return $timezone;
 	}
 
+	/**
+	 * Sanitize a CSS-safe identifier (class/id fragment).
+	 *
+	 * @param mixed  $value   Raw value.
+	 * @param string $default Fallback value.
+	 *
+	 * @return string
+	 */
+	private function ive_sanitize_css_identifier( $value, $default = '' ) {
+		$value = preg_replace( '/[^a-zA-Z0-9_-]/', '', (string) $value );
+		return ( '' !== $value ) ? $value : $default;
+	}
+
+	/**
+	 * Sanitize numeric CSS values.
+	 *
+	 * @param mixed $value   Raw value.
+	 * @param mixed $default Fallback value.
+	 *
+	 * @return float|int
+	 */
+	private function ive_sanitize_css_number( $value, $default = 0 ) {
+		if ( is_numeric( $value ) ) {
+			return 0 + $value;
+		}
+
+		return is_numeric( $default ) ? ( 0 + $default ) : 0;
+	}
+
+	/**
+	 * Sanitize a CSS color value.
+	 *
+	 * @param mixed  $value   Raw value.
+	 * @param string $default Fallback value.
+	 *
+	 * @return string
+	 */
+	private function ive_sanitize_css_color( $value, $default = '' ) {
+		$value = trim( (string) $value );
+
+		if ( '' === $value ) {
+			return $default;
+		}
+
+		$hex = sanitize_hex_color( $value );
+		if ( ! empty( $hex ) ) {
+			return $hex;
+		}
+
+		if ( preg_match( '/^(rgba?|hsla?)\(\s*[0-9.%\s,\-]+\)$/i', $value ) ) {
+			return $value;
+		}
+
+		return $default;
+	}
+
+	/**
+	 * Sanitize a CSS keyword from an allow-list.
+	 *
+	 * @param mixed  $value   Raw value.
+	 * @param array  $allowed Allowed values.
+	 * @param string $default Fallback value.
+	 *
+	 * @return string
+	 */
+	private function ive_sanitize_css_keyword( $value, $allowed, $default = '' ) {
+		$value = strtolower( trim( (string) $value ) );
+		return in_array( $value, $allowed, true ) ? $value : $default;
+	}
+
+	/**
+	 * Sanitize a CSS font family string.
+	 *
+	 * @param mixed  $value   Raw value.
+	 * @param string $default Fallback value.
+	 *
+	 * @return string
+	 */
+	private function ive_sanitize_css_font_family( $value, $default = 'Open Sans' ) {
+		$value = trim( (string) $value );
+		$value = preg_replace( '/[^a-zA-Z0-9\s,\-\+]/', '', $value );
+
+		return ( '' !== $value ) ? $value : $default;
+	}
+
+	/**
+	 * Sanitize Google font family query value.
+	 *
+	 * @param mixed  $value   Raw value.
+	 * @param string $default Fallback value.
+	 *
+	 * @return string
+	 */
+	private function ive_sanitize_google_font_family_query( $value, $default = 'Open+Sans' ) {
+		$value = trim( (string) $value );
+		$value = str_replace( ' ', '+', $value );
+		$value = preg_replace( '/[^a-zA-Z0-9\+\-]/', '', $value );
+
+		return ( '' !== $value ) ? $value : $default;
+	}
+
 	function ive_countdown_callback($atts) {
 
 		if(empty($atts['content'])){
@@ -625,10 +726,37 @@ class WP_Ivecountdown {
 		if(is_numeric($height)){
 			$height .= 'px';
 		}
-		$fonttypography = str_replace(" ","+",$typography);
-		$fontfamilyname = ($fonttypography !== '') ? $fonttypography : 'Open+Sans';
-
 		$id = uniqid();
+
+		$css_id = $this->ive_sanitize_css_identifier( $id );
+		$css_background_color = $this->ive_sanitize_css_color( $backgroundcolor, '#000000' );
+		$css_text_color = $this->ive_sanitize_css_color( $textcolor, '#ffffff' );
+		$css_text_color_hover = $this->ive_sanitize_css_color( $textcolorhov, $css_text_color );
+		$css_border_color = $this->ive_sanitize_css_color( $bordercolor, '#ffffff' );
+		$css_border_color_hover = $this->ive_sanitize_css_color( $bordercolorhov, $css_border_color );
+		$css_border_width = $this->ive_sanitize_css_number( $borderwidth, 0 );
+		$css_border_radius = $this->ive_sanitize_css_number( $borderradius, 0 );
+		$css_margin_tb = $this->ive_sanitize_css_number( $margintb, 0 );
+		$css_margin_lr = $this->ive_sanitize_css_number( $marginlr, 0 );
+		$css_font_family = $this->ive_sanitize_css_font_family( $typography, 'Open Sans' );
+		$css_google_font_family = $this->ive_sanitize_google_font_family_query( $typography, 'Open+Sans' );
+		$css_google_font_weight = $this->ive_sanitize_css_keyword( $fontweight, array( '100', '200', '300', '400', '500', '600', '700', '800', '900' ), '400' );
+		$css_font_weight = $this->ive_sanitize_css_keyword( $fontweight, array( '100', '200', '300', '400', '500', '600', '700', '800', '900', 'normal', 'bold', 'bolder', 'lighter' ), '400' );
+		$css_font_style = $this->ive_sanitize_css_keyword( $fontstyle, array( 'normal', 'italic', 'oblique' ), 'normal' );
+		$css_letter_spacing = $this->ive_sanitize_css_number( $letterspacing, 0 );
+		$css_text_transform = $this->ive_sanitize_css_keyword( $texttransform, array( 'none', 'capitalize', 'uppercase', 'lowercase' ), 'none' );
+		$css_mobile_align = $this->ive_sanitize_css_keyword( $mobalign, array( 'left', 'right', 'center', 'justify', 'start', 'end' ), 'left' );
+		$css_tablet_align = $this->ive_sanitize_css_keyword( $tabalign, array( 'left', 'right', 'center', 'justify', 'start', 'end' ), 'left' );
+		$css_desktop_align = $this->ive_sanitize_css_keyword( $deskalign, array( 'left', 'right', 'center', 'justify', 'start', 'end' ), 'left' );
+		$css_justify_content = $this->ive_sanitize_css_keyword( $tabalignment, array( 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly', 'start', 'end', 'left', 'right' ), 'left' );
+		$css_mobile_label_size = $this->ive_sanitize_css_number( $moblabelfontsize, 8 );
+		$css_mobile_number_size = $this->ive_sanitize_css_number( $mobnumberfontsize, 18 );
+		$css_tablet_label_size = $this->ive_sanitize_css_number( $tablabelfontsize, 11 );
+		$css_tablet_number_size = $this->ive_sanitize_css_number( $tabnumberfontsize, 24 );
+		$css_desktop_label_size = $this->ive_sanitize_css_number( $desklabelfontsize, 11 );
+		$css_desktop_number_size = $this->ive_sanitize_css_number( $desknumberfontsize, 24 );
+		$css_desk_width = $this->ive_sanitize_css_number( $deskwidth, 72 );
+		$css_desk_height = $this->ive_sanitize_css_number( $deskheight, 62 );
 
 		$ive = '<div id="'.esc_attr( $id."-countdown").'" class="'.esc_attr("ive-title countdown_main_".$id." align".$blockalignment." ive_countdown").'" style="width:'. esc_attr($width) .'; height:'. esc_attr($height) .';">';
 		$ive .= '<div class="'.esc_attr($style."-countdown").'">';
@@ -638,62 +766,62 @@ class WP_Ivecountdown {
 	    }
 		$ive .=  '</div>';
 		$ive .= '<style>';
-		$ive .= '@import url("https://fonts.googleapis.com/css2?family='.esc_attr($fontfamilyname).':wght@'.esc_attr($fontweight).'&display=swap");';
+		$ive .= '@import url("https://fonts.googleapis.com/css2?family=' . $css_google_font_family . ':wght@' . $css_google_font_weight . '&display=swap");';
 		$ive .= '
-		.countdown-style-'.esc_attr($id).'{
-			background: '.esc_attr($backgroundcolor).' !important;
-			color: '.esc_attr($textcolor).' !important;
-			border: '.esc_attr($borderwidth).'px solid '.esc_attr($bordercolor).' !important;
-			border-radius: '.esc_attr($borderradius).'px !important;
-			margin: '.esc_attr($margintb).'px '.esc_attr($marginlr).'px !important;
+		.countdown-style-' . $css_id . '{
+			background: ' . $css_background_color . ' !important;
+			color: ' . $css_text_color . ' !important;
+			border: ' . $css_border_width . 'px solid ' . $css_border_color . ' !important;
+			border-radius: ' . $css_border_radius . 'px !important;
+			margin: ' . $css_margin_tb . 'px ' . $css_margin_lr . 'px !important;
 		}
-		.countdown-width-height'.esc_attr($id).':hover{
-		  color: '.esc_attr($textcolorhov).' !important;
+		.countdown-width-height' . $css_id . ':hover{
+		  color: ' . $css_text_color_hover . ' !important;
 		}
-		.countdown-style-'.esc_attr($id).':hover{
-			border: '.esc_attr($borderwidth).'px solid '.esc_attr($bordercolorhov).' !important;
+		.countdown-style-' . $css_id . ':hover{
+			border: ' . $css_border_width . 'px solid ' . $css_border_color_hover . ' !important;
 		}
-		.countdown-title-color-'.esc_attr($id).'{
-			color: '.esc_attr($textcolor).' !important;
-			font-family: '.esc_attr($fonttypography).' !important;
-			font-weight: '.esc_attr($fontweight).' !important;
-			font-style: '.esc_attr($fontstyle).' !important;
-			letter-spacing: '.esc_attr($letterspacing).'px !important;
-			text-transform: '.esc_attr($texttransform).' !important;
+		.countdown-title-color-' . $css_id . '{
+			color: ' . $css_text_color . ' !important;
+			font-family: "' . $css_font_family . '" !important;
+			font-weight: ' . $css_font_weight . ' !important;
+			font-style: ' . $css_font_style . ' !important;
+			letter-spacing: ' . $css_letter_spacing . 'px !important;
+			text-transform: ' . $css_text_transform . ' !important;
 		}
 		@media screen and (max-width: 767px){
-			.countdown-title-color-'.esc_attr($id).'{
-				text-align: '.esc_attr($mobalign).' !important;
-				font-size:'.esc_attr($moblabelfontsize).'px !important;
+			.countdown-title-color-' . $css_id . '{
+				text-align: ' . $css_mobile_align . ' !important;
+				font-size:' . $css_mobile_label_size . 'px !important;
 			}
-			.countdown-number-fontsize-'.esc_attr($id).'{
-				font-size:'.esc_attr($mobnumberfontsize).'px !important;
+			.countdown-number-fontsize-' . $css_id . '{
+				font-size:' . $css_mobile_number_size . 'px !important;
 			}
 		}
 		@media screen and (min-width: 768px) and (max-width: 1023px){
-			.countdown-title-color-'.esc_attr($id).'{
-				text-align: '.esc_attr($tabalign).' !important;
-				font-size:'.esc_attr($tablabelfontsize).'px !important;
+			.countdown-title-color-' . $css_id . '{
+				text-align: ' . $css_tablet_align . ' !important;
+				font-size:' . $css_tablet_label_size . 'px !important;
 			}
-			.countdown-number-fontsize-'.esc_attr($id).'{
-				font-size:'.esc_attr($tabnumberfontsize).'px !important;
+			.countdown-number-fontsize-' . $css_id . '{
+				font-size:' . $css_tablet_number_size . 'px !important;
 			}
 		}
 		@media screen and (min-width: 1024px){
-			.countdown_main_'.esc_attr($id).'{
-				justify-content:'.esc_attr($tabalignment).';
+			.countdown_main_' . $css_id . '{
+				justify-content:' . $css_justify_content . ';
 				display:flex;
 			}
-			.countdown-title-color-'.esc_attr($id).'{
-				text-align: '.esc_attr($deskalign).' !important;
-				font-size:'.esc_attr($desklabelfontsize).'px !important;
+			.countdown-title-color-' . $css_id . '{
+				text-align: ' . $css_desktop_align . ' !important;
+				font-size:' . $css_desktop_label_size . 'px !important;
 			}
-			.countdown-width-height'.esc_attr($id).'{
-				width:'.esc_attr($deskwidth).'px !important;
-				height:'.esc_attr($deskheight).'px !important;
+			.countdown-width-height' . $css_id . '{
+				width:' . $css_desk_width . 'px !important;
+				height:' . $css_desk_height . 'px !important;
 			}
-			.countdown-number-fontsize-'.esc_attr($id).'{
-				font-size:'.esc_attr($desknumberfontsize).'px !important;
+			.countdown-number-fontsize-' . $css_id . '{
+				font-size:' . $css_desktop_number_size . 'px !important;
 			}
 		}
 		';

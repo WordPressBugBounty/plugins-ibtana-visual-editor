@@ -1,0 +1,111 @@
+.ive-fields-builder-wrap {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #d8dee8;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.wc-item-table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.wc-item-table .wc-sub-row td {
+  background: #fff;
+  border: 1px solid #d8dee8;
+  border-right: none;
+  padding: 12px;
+  vertical-align: top;
+}
+
+.wc-item-table .wc-sub-row td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.wc-item-table .wc-sub-row td:last-child {
+  border-right: 1px solid #d8dee8;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.ive-field-label {
+  margin: 0 0 6px;
+  color: #334155;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+
+.ive-field-input,
+.ive-field-select {
+  width: 100%;
+  min-height: 38px;
+  border-radius: 6px;
+  border-color: #cbd5e1;
+}
+
+.ive-field-input:focus,
+.ive-field-select:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 1px #0f766e;
+}
+
+.ive-action-cell {
+  width: 110px;
+  text-align: center;
+}
+
+.wc-item-table .wc-sub-row td.ive-action-cell {
+  vertical-align: middle;
+}
+
+.wc-remove-item.button {
+  min-height: 38px;
+  border-color: #d0d7e2;
+}
+
+.wc-add-item.button {
+  min-height: 40px;
+  padding: 0 14px;
+  margin-top: 6px;
+}
+
+.wc-item-table tfoot td {
+  padding-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .wc-item-table,
+  .wc-item-table tbody,
+  .wc-item-table tr,
+  .wc-item-table td,
+  .wc-item-table tfoot {
+    display: block;
+    width: 100%;
+  }
+
+  .wc-item-table .wc-sub-row td {
+    border-right: 1px solid #d8dee8;
+    border-bottom: none;
+    border-radius: 0;
+  }
+
+  .wc-item-table .wc-sub-row td:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 0;
+  }
+
+  .wc-item-table .wc-sub-row td:last-child {
+    border-bottom: 1px solid #d8dee8;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 0;
+    margin-bottom: 10px;
+  }
+
+  .ive-action-cell {
+    text-align: left;
+  }
+}

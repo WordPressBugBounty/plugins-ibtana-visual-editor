@@ -4,7 +4,7 @@ Tags: website builder, gutenberg, One click demo Import, templates, page builder
 Requires at least: 5.2
 Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 1.2.5.9
+Stable tag: 1.2.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,7 +25,7 @@ Ibtana isn't just a plugin; it's a community! Dive into a collection of stunning
 
 **Explore the Collection of Premium Theme (Starting from $21) - [Premium WordPress Themes](https://www.vwthemes.com/collections/premium-wordpress-themes)**
 
-**Get the 250+ WordPress Theme Bundle at just $99 - [WP Theme Bundle](https://www.vwthemes.com/products/wp-theme-bundle)**
+**Get the 485+ WordPress Theme Bundle at just $99 - [WP Theme Bundle](https://www.vwthemes.com/products/wp-theme-bundle)**
 
 ## WHAT THE PLUGIN DOES?
 
@@ -144,7 +144,13 @@ Add contact form to your page with reCaptcha.
 
 == Changelog ==
 
-= 1.2.5.8 - 2026-21-03 =
+= 1.2.6.1 - 2026-29-04 =
+* **Fixes** - Minor Bug Fixes.
+
+= 1.2.6 - 2026-28-04 =
+* **Enhancement** - Custom fields ui updated.
+
+= 1.2.5.9 - 2026-21-03 =
 * **Fixes** - Security patches.
 
 = 1.2.5.8 - 2026-04-03 =

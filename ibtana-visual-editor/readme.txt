@@ -4,7 +4,7 @@ Tags: website builder, gutenberg, One click demo Import, templates, page builder
 Requires at least: 5.2
 Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 1.2.6.2
+Stable tag: 1.2.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -143,6 +143,10 @@ Add contact form to your page with reCaptcha.
 17. Carousel Block.
 
 == Changelog ==
+
+= 1.2.6.3 - 2026-01-07 =
+* **Fixes** - Minor Bug Fixes.
+* **Updated** - Getting Started Banner Image.
 
 = 1.2.6.2 - 2026-02-05 =
 * **Fixes** - Minor Bug Fixes.

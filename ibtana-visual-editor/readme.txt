@@ -4,7 +4,7 @@ Tags: website builder, gutenberg, One click demo Import, templates, page builder
 Requires at least: 5.2
 Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 1.2.6.3
+Stable tag: 1.2.6.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,7 +25,7 @@ Ibtana isn't just a plugin; it's a community! Dive into a collection of stunning
 
 **Explore the Collection of Premium Theme (Starting from $21) - [Premium WordPress Themes](https://www.vwthemes.com/collections/premium-wordpress-themes)**
 
-**Get the 485+ WordPress Theme Bundle at just $99 - [WP Theme Bundle](https://www.vwthemes.com/products/wp-theme-bundle)**
+**Get the 500+ WordPress Theme Bundle at just $119 - [WP Theme Bundle](https://www.vwthemes.com/products/wp-theme-bundle)**
 
 ## WHAT THE PLUGIN DOES?
 
@@ -143,6 +143,8 @@ Add contact form to your page with reCaptcha.
 17. Carousel Block.
 
 == Changelog ==
+= 1.2.6.4 - 2026-17-07 =
+* **Fixes** - Minor Bug Fixes.
 
 = 1.2.6.3 - 2026-01-07 =
 * **Fixes** - Minor Bug Fixes.

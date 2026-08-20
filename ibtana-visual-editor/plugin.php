@@ -3,7 +3,7 @@
  * Plugin Name:       Ibtana - WordPress Website Builder
  * Plugin URI:        https://www.vwthemes.com/products/wordpress-website-builder/
  * Description:       Build your dream WordPress website with Ibtana, a powerful website builder with customizable templates and drag-and-drop elements for customization.
- * Version:           1.2.6.4
+ * Version:           1.2.6.5
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            VowelWeb
@@ -33,8 +33,11 @@ if( ! function_exists('get_plugin_data') ) {
   require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
 
-define( 'IVE_VER', '1.2.6.4' );
+define( 'IVE_VER', '1.2.6.5' );
 define( 'IBTANA_LICENSE_API_ENDPOINT', 'https://preview.vwthemesdemo.com/old_website/wp-json/ibtana-licence/v2/' );
+if ( ! defined( 'IVE_FREE_THEME_SUPPORT_API_BASE' ) ) {
+  define( 'IBTANA_SHOPIFY_LICENSE_API_ENDPOINT', 'https://license.vwthemes.com/api' );
+}
 define( 'IBTANA_THEME_URL', 'https://www.vwthemes.com/' );
 
 // Add the links on the Plugins administration screen
@@ -57,6 +60,7 @@ require_once IVE_DIR . 'classes/class-ive-helper.php';
 require_once IVE_DIR . 'classes/class-ive-admin.php';
 require_once IVE_DIR . 'classes/class-cpt.php';
 require_once IVE_DIR . 'classes/ive-notice.php';
+require_once IVE_DIR . 'classes/class-ive-free-theme-support.php';
 require_once IVE_DIR . 'admin-menu.php';
 
 // Admin Menu To Display Premium Products END
@@ -86,4 +90,3 @@ require_once IVE_DIR . 'ive-custom-fields/ive-custom-fields-posttype.php';
 require_once IVE_DIR . 'ive-custom-fields/custom-fields.php';
 require_once IVE_DIR . 'ive-custom-fields/custom-post-select.php';
 require_once IVE_DIR . 'ive-custom-fields/fields/is-text.php';
-?>

@@ -4,7 +4,7 @@ Tags: website builder, gutenberg, One click demo Import, templates, page builder
 Requires at least: 5.2
 Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 1.2.6.5
+Stable tag: 1.2.6.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -143,335 +143,339 @@ Add contact form to your page with reCaptcha.
 17. Carousel Block.
 
 == Changelog ==
-= 1.2.6.5 - 2026-20-08 =
+= 1.2.6.6 - 2026-08-22 =
+* **Fixes** - Fixed free theme support popup not reflecting remote enable/disable status correctly, and reduced popup status cache duration.
+* **Fixes** - The popup status is now only requested for administrators who can see the popup, and no longer writes API responses to the PHP error log.
+
+= 1.2.6.5 - 2026-08-20 =
 * **Added** - Added subscription popup for free themes.
 
-= 1.2.6.4 - 2026-17-07 =
+= 1.2.6.4 - 2026-07-17 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.6.3 - 2026-01-07 =
+= 1.2.6.3 - 2026-07-01 =
 * **Fixes** - Minor Bug Fixes.
 * **Updated** - Getting Started Banner Image.
 
-= 1.2.6.2 - 2026-02-05 =
+= 1.2.6.2 - 2026-05-02 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.6.1 - 2026-29-04 =
+= 1.2.6.1 - 2026-04-29 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.6 - 2026-28-04 =
+= 1.2.6 - 2026-04-28 =
 * **Enhancement** - Custom fields ui updated.
 
-= 1.2.5.9 - 2026-21-03 =
+= 1.2.5.9 - 2026-03-21 =
 * **Fixes** - Security patches.
 
-= 1.2.5.8 - 2026-04-03 =
+= 1.2.5.8 - 2026-03-04 =
 * **Fixes** - Security patches.
 * **Optimization** - Plugin security optimizations.
 
-= 1.2.5.7 - 2026-28-02 =
+= 1.2.5.7 - 2026-02-28 =
 * **Added** - Added Line Height Setting in Posttype Slider.
 
-= 1.2.5.6 - 2025-15-12 =
+= 1.2.5.6 - 2025-12-15 =
 * **Updated** - Getting Started Banner Image.
 
-= 1.2.5.5 - 2025-20-09 =
+= 1.2.5.5 - 2025-09-20 =
 * **Fixes** - Security patches.
 
-= 1.2.5.4 - 2025-28-08 =
+= 1.2.5.4 - 2025-08-28 =
 * **Fixes** - Security patches.
 
-= 1.2.5.3 - 2025-22-08 =
+= 1.2.5.3 - 2025-08-22 =
 * **Fixes** - Security patches.
 * **Optimization** - Plugin security optimizations.
 
-= 1.2.5.2 - 2025-14-06 =
+= 1.2.5.2 - 2025-06-14 =
 * **Fixes** - Security patches.
 
 = 1.2.5.1 - 2025-05-05 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.5 - 2025-30-04 =
+= 1.2.5 - 2025-04-30 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.4.9 - 2024-26-12 =
+= 1.2.4.9 - 2024-12-26 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.4.8 - 2024-27-11 =
+= 1.2.4.8 - 2024-11-27 =
 * **Enhancement** - Updated to submenu style.
 
-= 1.2.4.7 - 2024-31-10 =
+= 1.2.4.7 - 2024-10-31 =
 * **Added** - Margin settings in Google Map Block.
 
-= 1.2.4.6 - 2024-18-10 =
+= 1.2.4.6 - 2024-10-18 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.4.5 - 2024-01-10 =
+= 1.2.4.5 - 2024-10-01 =
 * **Optimization** - Plugin security optimizations.
 
-= 1.2.4.4 - 2024-25-09 =
+= 1.2.4.4 - 2024-09-25 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.4.3 - 2024-21-09 =
+= 1.2.4.3 - 2024-09-21 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.4.2 - 2024-20-09 =
+= 1.2.4.2 - 2024-09-20 =
 * **Fixes** - Minor Bug Fixes.
 
 = 1.2.4.1 - 2024-09-09 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.4 - 2024-06-09 =
+= 1.2.4 - 2024-09-06 =
 * **Enhancement** - Redesigned plugin dashboard with a modern, user-friendly interface for improved navigation and usability.
 
-= 1.2.3.9 - 2024-17-08 =
+= 1.2.3.9 - 2024-08-17 =
 * **Optimization** - Plugin security optimizations.
 
-= 1.2.3.8 - 2024-07-08 =
+= 1.2.3.8 - 2024-08-07 =
 * **Optimization** - Plugin security optimizations.
 
-= 1.2.3.7 - 2024-22-07 =
+= 1.2.3.7 - 2024-07-22 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.3.6 - 2024-02-07 =
+= 1.2.3.6 - 2024-07-02 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.3.5 - 2024-29-06 =
+= 1.2.3.5 - 2024-06-29 =
 * **Added** - Added Protest Riot font family.
 
-= 1.2.3.4 - 2024-29-05 =
+= 1.2.3.4 - 2024-05-29 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.3.3 - 2024-24-05 =
+= 1.2.3.3 - 2024-05-24 =
 * **Updated** - Font size settings in advanced text block.
 
-= 1.2.3.2 - 2024-03-05 =
+= 1.2.3.2 - 2024-05-03 =
 * **Added** - Typography settings in post category in posttype slider block.
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.3.1 - 2024-12-03 =
+= 1.2.3.1 - 2024-03-12 =
 * **Added** - Added font size settings in the posttype slider for the post.
 * **Added** - Added Figtree and Plus Jakarta Sans font family.
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.3 - 2024-16-02 =
+= 1.2.3 - 2024-02-16 =
 * **Added** - Added category title color settings in the posttype slider for the post.
 
-= 1.2.2.9 - 2024-07-02 =
+= 1.2.2.9 - 2024-02-07 =
 * **Added** - Added category hide & show toggle in the posttype slider for the post.
 
-= 1.2.2.8 - 2024-20-01 =
+= 1.2.2.8 - 2024-01-20 =
 * **Added** - Added category option in the posttype slider for post.
 * **Fixes** - Minor Bug Fixes.
 * **Fixes** - Fixed navigation issues in the posttype slider on tablet and mobile media..
 
-= 1.2.2.7 - 2024-12-01 =
+= 1.2.2.7 - 2024-01-12 =
 * **Added** - Flip animation in the gallery block.
 
-= 1.2.2.6 - 2024-08-01 =
+= 1.2.2.6 - 2024-01-08 =
 * **Added** - RotateIn & RotateOut animation in the gallery block.
 
-= 1.2.2.5 - 2023-22-12 =
+= 1.2.2.5 - 2023-12-22 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.2.4 - 2023-18-12 =
+= 1.2.2.4 - 2023-12-18 =
 * **Fixes** - Font Family issue resolved.
 
-= 1.2.2.3 - 2023-14-12 =
+= 1.2.2.3 - 2023-12-14 =
 * **Updated** - Updated Plugin content.
 
-= 1.2.2.2 - 2023-08-12 =
+= 1.2.2.2 - 2023-12-08 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.2.1 - 2023-07-12 =
+= 1.2.2.1 - 2023-12-07 =
 * **Fixes** - Minor Bug Fixes.
 * **Fixes** - Countdown block shortcode issue.
 * **Updated** - Fontawesome Library.
 
-= 1.2.2 - 2023-24-11 =
+= 1.2.2 - 2023-11-24 =
 * **Fixes** - Minor Bug Fixes.
 * **Fixes** - Countdown block shortcode issue.
 
-= 1.2.1.9 - 2023-18-11 =
+= 1.2.1.9 - 2023-11-18 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.1.8 - 2023-13-11 =
+= 1.2.1.8 - 2023-11-13 =
 * **Optimization** - Full plugin security optimizations.
 * **Fixes** - Minor Bug Fixes.
 
-= 1.2.1.7 - 2023-06-11 =
+= 1.2.1.7 - 2023-11-06 =
 * **Optimization** - Full plugin security optimizations.
 
-= 1.2.1.6 - 2023-28-10 =
+= 1.2.1.6 - 2023-10-28 =
 * **Added** - New Google Font Families ( Outfit and Kumbh Sans ).
 
-= 1.2.1.5 - 2023-17-10 =
+= 1.2.1.5 - 2023-10-17 =
 * **Added** - Added New Important CSS Settings In Advance Button Block.
 
-= 1.2.1.4 - 2023-07-10 =
+= 1.2.1.4 - 2023-10-07 =
 * **Added** - Added New Important CSS Settings In Products Carousel.
 
-= 1.2.1.3 - 2023-29-09 =
+= 1.2.1.3 - 2023-09-29 =
 * **Added** - Added New CSS Settings In Products Carousel.
 
-= 1.2.1.2 - 2023-23-09 =
+= 1.2.1.2 - 2023-09-23 =
 * **Added** - Added New Important CSS Settings In Products Carousel.
 
-= 1.2.1.1 - 2023-16-09 =
+= 1.2.1.1 - 2023-09-16 =
 * **Added** - Added New CSS Settings In Products Carousel.
 
-= 1.2.1 - 2023-11-09 =
+= 1.2.1 - 2023-09-11 =
 * **Added** - Added New Settings In Products Carousel.
 
-= 1.2.0.9 - 2023-26-08 =
+= 1.2.0.9 - 2023-08-26 =
 * **Fixes** - Minor Bug Fixes In IVE Custom Fields.
 
-= 1.2.0.8 - 2023-16-08 =
+= 1.2.0.8 - 2023-08-16 =
 * **Added** - Added New Settings In Progress Bar.
 
-= 1.2.0.7 - 2023-07-08 =
+= 1.2.0.7 - 2023-08-07 =
 * **Added** - Added with the new fields in custom fields.
 * Text Field.
 * Checkbox Field.
 * Repeater Fields.
 
-= 1.2.0.6 - 2023-15-07 =
+= 1.2.0.6 - 2023-07-15 =
 * **Added** - Added New Settings In Progress Bar.
 
-= 1.2.0.5 - 2023-10-07 =
+= 1.2.0.5 - 2023-07-10 =
 * **Added** - Added New Settings In Advanced Separator & Spacer.
 
-= 1.2.0.4 - 2023-01-07 =
+= 1.2.0.4 - 2023-07-01 =
 * **Added** - Added New CSS Settings In Advanced Separator & Spacer.
 * **Fixes** - CSS Bug Fixes In Advanced Button.
 
-= 1.2.0.3 - 2023-24-06 =
+= 1.2.0.3 - 2023-06-24 =
 * **Added** - Added New CSS Settings In Advanced Text Block.
 
-= 1.2.0.2 - 2023-19-06 =
+= 1.2.0.2 - 2023-06-19 =
 * **Added** - Added New Settings In Advanced Text Block.
 
-= 1.2.0.1 - 2023-13-06 =
+= 1.2.0.1 - 2023-06-13 =
 * **Added** - Added New CSS Settings In Advanced Text Block.
 
-= 1.2.0 - 2023-05-06 =
+= 1.2.0 - 2023-06-05 =
 * **Added** - Added New Important CSS Settings In Advanced Text Block.
 
-= 1.1.9.9 - 2023-29-05 =
+= 1.1.9.9 - 2023-05-29 =
 * **Added** - Added New Important CSS Settings In Advance Button Block.
 
-= 1.1.9.8 - 2023-15-05 =
+= 1.1.9.8 - 2023-05-15 =
 * **Added** - Added New CSS Settings In Advance Button Block.
 
-= 1.1.9.7 - 2023-10-05 =
+= 1.1.9.7 - 2023-05-10 =
 * **Added** - Added New Important CSS Settings In Advance Button Block.
 
-= 1.1.9.6 - 2023-08-05 =
+= 1.1.9.6 - 2023-05-08 =
 * **Added** - Added New CSS Settings In Advance Button Block.
 
-= 1.1.9.5 - 2023-02-05 =
+= 1.1.9.5 - 2023-05-02 =
 * **Fixes** - Minor Bugs Fixes.
 
-= 1.1.9.4 - 2023-17-04 =
+= 1.1.9.4 - 2023-04-17 =
 * **Added** - Added Top Padding setting in button block.
 
-= 1.1.9.3 - 2023-08-04 =
+= 1.1.9.3 - 2023-04-08 =
 * **Added** - Added Bottom Padding setting in button block.
 
-= 1.1.9.2 - 2023-01-03 =
+= 1.1.9.2 - 2023-03-01 =
 * **Added** - Added Left Margin setting in button block.
 
-= 1.1.9.1 - 2023-20-02 =
+= 1.1.9.1 - 2023-02-20 =
 * **Added** - New Google Font Families.
 
-= 1.1.9 - 2023-08-02 =
+= 1.1.9 - 2023-02-08 =
 * **Added** - Added Imagehover Color in Products Carousel.
 * **Fixes** - CSS Bug Fixes In Advance Text Block.
 
-= 1.1.8.9 - 2023-18-01 =
+= 1.1.8.9 - 2023-01-18 =
 * **Added** - Left Spacing Setting in Posttype Slider.
 * **Fixes** - Major Bug Fixes In Countdown Block.
 
-= 1.1.8.8 - 2023-09-01 =
+= 1.1.8.8 - 2023-01-09 =
 * **Fixes** - Minor bugs fixes.
 
-= 1.1.8.7 - 2022-19-12 =
+= 1.1.8.7 - 2022-12-19 =
 * **Added** - Right Margin Setting in Button Block.
 
-= 1.1.8.6 - 2022-13-12 =
+= 1.1.8.6 - 2022-12-13 =
 * **Added** - Left Margin Setting in Button Block.
 
-= 1.1.8.5 - 2022-06-12 =
+= 1.1.8.5 - 2022-12-06 =
 * **Added** - New Google Font Families.
 
-= 1.1.8.4 - 2022-15-11 =
+= 1.1.8.4 - 2022-11-15 =
 * **Added** - Digits Hover color in Countdown.
 
-= 1.1.8.3 - 2022-08-11 =
+= 1.1.8.3 - 2022-11-08 =
 * **Added** - Hover Border color in Countdown.
 
-= 1.1.8.2 - 2022-01-11 =
+= 1.1.8.2 - 2022-11-01 =
 * **Fixes** - Posttype slider Price settings css issue resolved.
 
-= 1.1.8.1 - 2022-18-10 =
+= 1.1.8.1 - 2022-10-18 =
 * **Added** - Added Border Settings in Products Carousel.
 
-= 1.1.8 - 2022-12-10 =
+= 1.1.8 - 2022-10-12 =
 * **Added** - Added Regual Price Setting in Products Carousel.
 
-= 1.1.7.9 - 2022-04-10 =
+= 1.1.7.9 - 2022-10-04 =
 * **Added** - Added Image Background Color in Products Carousel.
 * **Added** - Added Google Font Families.
 
-= 1.1.7.8 - 2022-29-09 =
+= 1.1.7.8 - 2022-09-29 =
 * **Added** - Added Iconhover Color in Products Carousel.
 
-= 1.1.7.7 - 2022-20-09 =
+= 1.1.7.7 - 2022-09-20 =
 * **Added** - Added Texthover Color in Products Carousel.
 
-= 1.1.7.6 - 2022-13-09 =
+= 1.1.7.6 - 2022-09-13 =
 * **Added** - Added Setup Wizard Elementor VW Themes.
 
-= 1.1.7.5 - 2022-07-09 =
+= 1.1.7.5 - 2022-09-07 =
 * **Added** - Text Transform Property in Posttype Slider.
 
-= 1.1.7.4 - 2022-26-08 =
+= 1.1.7.4 - 2022-08-26 =
 * **Added** - New 2022 Font Families.
 
-= 1.1.7.3 - 2022-19-08 =
+= 1.1.7.3 - 2022-08-19 =
 * **Fixes** - Form block reCAPTCHA issue resolved.
 
-= 1.1.7.2 - 2022-09-08 =
+= 1.1.7.2 - 2022-08-09 =
 * **Added** - Text Transform Property in Countdown.
 
-= 1.1.7.1 - 2022-20-07 =
+= 1.1.7.1 - 2022-07-20 =
 * **Added** - Added Setup Wizard For Free VW Themes.
 
-= 1.1.7 - 2022-29-06 =
+= 1.1.7 - 2022-06-29 =
 * **Added** - Added Padding in slide.
 
-= 1.1.6.9 - 2022-18-06 =
+= 1.1.6.9 - 2022-06-18 =
 * **Added** - Added Hover Background color in progress bar.
 * **Fixes** - Major Bug fixes.
 
-= 1.1.6.8 - 2022-13-06 =
+= 1.1.6.8 - 2022-06-13 =
 * **Added** - Google reCaptcha on/off setting in Form.
 * **Fixes** - Bug fixes.
 
-= 1.1.6.7 - 2022-08-06 =
+= 1.1.6.7 - 2022-06-08 =
 * **Added** - Text Transform Property in Posttype Slider.
 * **Fixes** - Bug fixes.
 
-= 1.1.6.6 - 2022-30-05 =
+= 1.1.6.6 - 2022-05-30 =
 * **Fixes** - Posttype slider issue resolved.
 
-= 1.1.6.5 - 2022-20-05 =
+= 1.1.6.5 - 2022-05-20 =
 * **Added** - Bug fixes.
 
-= 1.1.6.4 - 2022-19-05 =
+= 1.1.6.4 - 2022-05-19 =
 * **Added** - Text Transform Property in Progress-Bar.
 
-= 1.1.6.3 - 2022-10-05 =
+= 1.1.6.3 - 2022-05-10 =
 * **Added** - Added Font Settings in Form.
 
 = 1.1.6.2 - 2022-05-05 =
@@ -482,73 +486,73 @@ Add contact form to your page with reCaptcha.
 * **Fixes** - Minor Bugs fixes.
 * **Added** - Added separate menu for woocommerce templates.
 
-= 1.1.6 - 2022-27-04 =
+= 1.1.6 - 2022-04-27 =
 * **Fixes** - Issue resolved for the already installed themes.
 
-= 1.1.5.9 - 2022-27-04 =
+= 1.1.5.9 - 2022-04-27 =
 * **Added** - Text Transform Property in Tabs.
 * **Fixes** - Minor Bugs Fixes.
 
-= 1.1.5.8 - 2022-20-04 =
+= 1.1.5.8 - 2022-04-20 =
 * **Fixes** - Minor Bugs Fixes.
 
-= 1.1.5.7 - 2022-14-04 =
+= 1.1.5.7 - 2022-04-14 =
 * **Fixes** - Minor Bugs Fixes.
 
-= 1.1.5.6 - 2022-14-04 =
+= 1.1.5.6 - 2022-04-14 =
 * **Added** - Text Transform Property in Advanced Button.
 * **Added** - League Spartan Font Family.
 
-= 1.1.5.5 - 2022-08-04 =
+= 1.1.5.5 - 2022-04-08 =
 * **Fixes** - Minor Bugs Fixes.
 * **Added** - Created Blog Post on Plugin Activation.
 
-= 1.1.5.4 - 2022-31-03 =
+= 1.1.5.4 - 2022-03-31 =
 * **Added** - Text Transform Property in Form Button.
 * **Fixes** - Minor Bugs Fixes.
 
-= 1.1.5.3 - 2022-28-03 =
+= 1.1.5.3 - 2022-03-28 =
 * **Fixes** - Minor Bugs Fixes.
 
-= 1.1.5.2 - 2022-25-03 =
+= 1.1.5.2 - 2022-03-25 =
 * **Added** - Text Transform Property in Posttype Slider Block.
 * **Fixes** - Minor Bugs Fixes.
 
-= 1.1.5.1 - 2022-17-03 =
+= 1.1.5.1 - 2022-03-17 =
 * **Added** - Font Settings in Form Button Block.
 * **Fixes** - Minor Bugs Fixes.
 
-= 1.1.5 - 2022-19-01 =
+= 1.1.5 - 2022-01-19 =
 * **Sanitization** - Full Plugin Sanitizations.
 
-= 1.1.4.9 - 2022-11-01 =
+= 1.1.4.9 - 2022-01-11 =
 * **Optimization** - Full plugin security optimizations.
 * **Updated** - Bootstrap v5.1.3.
 
-= 1.1.4.8 - 2022-04-01 =
+= 1.1.4.8 - 2022-01-04 =
 * **Fixes** - Minor bug fixes.
 
-= 1.1.4.7 - 2021-30-12 =
+= 1.1.4.7 - 2021-12-30 =
 * **Optimization** - Full security optimizations.
 
-= 1.1.4.6 - 2021-14-12 =
+= 1.1.4.6 - 2021-12-14 =
 * **Added** - Addons panel for activating/deactivating ibtana addons.
 * **Optimization** - Full plugin optimizations.
 
-= 1.1.4.5 - 2021-20-11 =
+= 1.1.4.5 - 2021-11-20 =
 * **Added** - Sen font family.
 * **Added** - Card Border Settings in Posttype Slider Block.
 
-= 1.1.4.4 - 2021-18-10 =
+= 1.1.4.4 - 2021-10-18 =
 * **Optimization** - Full plugin optimizations.
 
-= 1.1.4.3 - 2021-11-10 =
+= 1.1.4.3 - 2021-10-11 =
 * **Optimization** - Full plugin optimizations.
 
-= 1.1.4.2 - 2021-04-10 =
+= 1.1.4.2 - 2021-10-04 =
 * **Optimization** - Minor plugin optimizations.
 
-= 1.1.4.1 - 2021-14-09 =
+= 1.1.4.1 - 2021-09-14 =
 * **Optimization** - Minor plugin optimizations.
 * **Fixes** - Minor CSS Fixes.
 * **Fixes** - Minor JS Fixes.
@@ -556,44 +560,44 @@ Add contact form to your page with reCaptcha.
 = 1.1.4 - 2021-09-09 =
 * **Optimization** - Minor plugin optimizations.
 
-= 1.1.3.9 - 2021-04-09 =
+= 1.1.3.9 - 2021-09-04 =
 * **Optimization** - Whole plugin optimization.
 * **Fixes** - Minor CSS Fixes.
 * **Fixes** - Minor JS Fixes.
 
-= 1.1.3.8 - 2021-31-08 =
+= 1.1.3.8 - 2021-08-31 =
 * **Fixes** - When child theme is activated of free parent theme then showed its template card at the first place in the Templates menu under Ibtana Settings.
 * **Fixes** - Optimized the templates record fetching process in the Templates admin menu under Ibtana Settings.
 
-= 1.1.3.7 - 2021-19-08 =
+= 1.1.3.7 - 2021-08-19 =
 * **Fixes** - In Posttype Slider, for the product buy now button, change icon settings was not visible when show icon only is selected for the button.
 * **Updated** - Bootstrap v5.0.2.
 * **Updated** - Blocks with the bootstrap classes.
 * **Fixes** - Minor Bug Fixes.
 
-= 1.1.3.6 - 2021-22-07 =
+= 1.1.3.6 - 2021-07-22 =
 * **Fixes** - Minor Bug Fixes.
 
-= 1.1.3.5 - 2021-21-07 =
+= 1.1.3.5 - 2021-07-21 =
 * **Added** - Added bulk delete option in the saved templates page.
 * **Added** - Added envato license page.
 * **Added** - Added component import functionality.
 * **Fixes** - Minor CSS Fixes.
 * **Fixes** - Minor JS Fixes.
 
-= 1.1.3.4 - 2021-05-07 =
+= 1.1.3.4 - 2021-07-05 =
 * **Added** - Added premium functionalities in the google map block.
 * **Added** - Major plugin optimization.
 * **Fixes** - Major CSS Fixes.
 * **Fixes** - Major JS Fixes.
 
-= 1.1.3.3 - 2021-24-06 =
+= 1.1.3.3 - 2021-06-24 =
 * **Added** - Cookie based exit intent trigger popup option in the popup block.
 * **Added** - Settings page in the admin menu for global settings such as google api key, custom css and js.
 * **Fixes** - Major CSS Fixes.
 * **Fixes** - Minor JS Fixes.
 
-= 1.1.3.2 - 2021-19-06 =
+= 1.1.3.2 - 2021-06-19 =
 * **Added** - Preview Saved Ibtana Page Type Templates.
 * **Added** - Farro font family.
 * **Added** - Added "wide width", "full width" and "align center" classes in posttype slider for grid layout.
@@ -604,25 +608,25 @@ Add contact form to your page with reCaptcha.
 * **Fixes** - Fixed Multiblock slider, a bug was causing to add an adding extra slide.
 * **Fixes** - Minor CSS Fixes.
 
-= 1.1.3.1 - 2021-28-05 =
+= 1.1.3.1 - 2021-05-28 =
 * **Added** - Save As Template functionality, Displayed the saved templates in the modal and in the ibtana settings admin menu.
 * **Added** - Export saved templates, Edit the saved template in the block editor.
 * **Fixes** - Minor CSS Fixed.
 
-= 1.1.3 - 2021-18-05 =
+= 1.1.3 - 2021-05-18 =
 * **Fixes** - CSS fixes in the admin menu pages.
 * **Fixes** - Variation Creation problem and product is out of stock problem.
 * **Fixes** - Plugin not activating when there are more than one plugin is required when the product template is imported.
 
-= 1.1.2.9 - 2021-07-05 =
+= 1.1.2.9 - 2021-05-07 =
 * **Fixes** - Removed Unused function which is causing issue on some sites.
 
-= 1.1.2.8 - 2021-06-05 =
+= 1.1.2.8 - 2021-05-06 =
 * **Added** - Creation of Categories and assigned in the product only when there are not more than 2 categories are available. Otherwise the product will be Uncategorised.
 * **Added** - Added Product Attributes such as color, Assigned those attributes in the product, creeated variations using those attributes if the template is for the variable product.
 * **Fixes** - Unnecessary styles and scripts loading even when the blocks from ibtana wasn't used on the page.
 
-= 1.1.2.7 - 2021-27-04 =
+= 1.1.2.7 - 2021-04-27 =
 * **Added** - Icon Alignment left, right and both in the post type sliders button as same as the advanced button block.
 * **Added** - Title padding for Tablet and Mobile Media in Tab block.
 * **Added** - Automatic Activate Gutenberg Editor in Woo Setting checkbox option in the step popup.
@@ -634,7 +638,7 @@ Add contact form to your page with reCaptcha.
 * **Fixes** - Minor CSS fixes.
 * **Fixes** - Minor Bug fixes.
 
-= 1.1.2.6 - 2021-22-04 =
+= 1.1.2.6 - 2021-04-22 =
 * **Added** - Drop Cap settings in the advanced text block.
 * **Added** - Settings for changing the sequence of meta tags position in post type block. Eg.: date, author and comment.
 * **Added** - Hover color in advanced text block for icons.
@@ -643,69 +647,69 @@ Add contact form to your page with reCaptcha.
 * **Fixes** - Minor CSS fixes in admin menu.
 * **Fixes** - Minor CSS fixes in frontend.
 
-= 1.1.2.5 - 2021-19-04 =
+= 1.1.2.5 - 2021-04-19 =
 * **Added** - Dynamic css load in the page.
 * **Fixes** - Posttype Slider Minor Bug Fixes.
 * **Fixes** - Minor css changed.
 * **Fixes** - Minor Bug Fixes.
 
-= 1.1.2.4 - 2021-15-04 =
+= 1.1.2.4 - 2021-04-15 =
 * **Added** - Advanced Text Block Text Transform Setting.
 * **Added** - Posttype Slider Block New Settings added in the product.
 * **Fixes** - Layout Issue Resolved in the Posttype Slider.
 * **Fixes** - Multi Slider Block Navigation Issue Resolved.
 * **Fixes** - Minor Bug Fixes.
 
-= 1.1.2.3 - 2021-08-04 =
+= 1.1.2.3 - 2021-04-08 =
 * **Added** - Popup Block New Settings Added.
 * **Added** - Icon Settings in the Popup Block.
 * **Fixes** - CSS Issue Resolved in the Multiblock Slider.
 * **Fixes** - Minor Bug Fixes.
 
-= 1.1.2.2 - 2021-31-03 =
+= 1.1.2.2 - 2021-03-31 =
 * Font-Family Issue Resolved.
 * Carousel Image Gradient Issue Resolved.
 * JSON Import Issue Resolved.
 * Minor Bug Fixes.
 
-= 1.1.2.1 - 2021-27-03 =
+= 1.1.2.1 - 2021-03-27 =
 * Added step to install base theme and required plugins in the Template and Modal Section.
 * Added Animation settings in the Advanced Button block.
 * Added Animation in the Advanced Gallery Block.
 * Added New Settings in the Advanced Gallery Block.
 * Minor Bug Fixes.
 
-= 1.1.2 - 2021-25-03 =
+= 1.1.2 - 2021-03-25 =
 * Added new Settings in Form Block.
 * Added Templates in the post page Popup.
 * Minor Bug Fixes.
 
-= 1.1.1.9 - 2021-19-03 =
+= 1.1.1.9 - 2021-03-19 =
 * Added Slider Option in the tabs block.
 * Added new Form Block.
 * Minor Bug Fixes.
 
-= 1.1.1.8 - 2021-12-03 =
+= 1.1.1.8 - 2021-03-12 =
 * Added Theme Wizard alert banner in Templates Section if Premium Theme is installed and activate with license.
 * Added left and right icon options in the button block.
 * Fixed border style issue in the multiblock slider.
 * Major CSS Fixes.
 
-= 1.1.1.7 - 2021-08-03 =
+= 1.1.1.7 - 2021-03-08 =
 * Fixed Exo 2 font family issue in Advanced Text Block.
 * Accordion issue solved: Had to click two times to add/remove section.
 * Unicode issue solved while json import.
 * Optimize CSS and JS.
 * Major CSS Fixes.
 
-= 1.1.1.6 - 2021-04-03 =
+= 1.1.1.6 - 2021-03-04 =
 * Added accordion layout for desktop view in tabs block.
 * Changed the position of tab content, i.e. on click of tab the content is opening on the end of tab list.
 * Fixed Background hover color issue on nav arrow in the multiblock slider.
 * Added new font family DM Serif Display.
 * Minor Bug Fixes.
 
-= 1.1.1.5 - 2021-27-02 =
+= 1.1.1.5 - 2021-02-27 =
 * Added border color on navigation dots in posttype block.
 * Added Gradient color setting on navigation arrows & dots in multiblock.
 * Added background gradient color setting on carousel image.
@@ -715,7 +719,7 @@ Add contact form to your page with reCaptcha.
 * Solved Advanced Text color issue.
 * Minor Bug Fixes.
 
-= 1.1.1.4 - 2021-26-02 =
+= 1.1.1.4 - 2021-02-26 =
 * Added border color on nav dots in Slider Block.
 * Added gradient color option for navigation arrows and dots in multiblock slider.
 * Added Background gradient color setting in multiblock slider.
@@ -724,41 +728,41 @@ Add contact form to your page with reCaptcha.
 * Added the pro badge if the inner page is premium in Templates tab under Ibtana Settings.
 * Major Bug Fixes.
 
-= 1.1.1.3 - 2021-22-02 =
+= 1.1.1.3 - 2021-02-22 =
 * Fixed issue of font family of product title in  post type slider block.
 * Added icon font size settings in the accordion block.
 * Added width and height settings in the progress bar radial ( round ).
 * Added gradient background color option in advance text block.
 * Minor Bug Fixes.
 
-= 1.1.1.2 - 2021-13-02 =
+= 1.1.1.2 - 2021-02-13 =
 * Accordion Dyanmic css generation & removal of Inline CSS functionality added.
 * Tabs JSON import issue resolved.
 * Multi-Block Slider Z-Index Issue Resolved.
 * Minor Bug Fixes.
 
-= 1.1.1.1 - 2021-13-02 =
+= 1.1.1.1 - 2021-02-13 =
 * Added Base Theme Installation and Activation Functionality while import.
 * Advanced Text color issue resolved.
 * Minor Bug Fixes.
 
-= 1.1.1.0 - 2021-11-02 =
+= 1.1.1.0 - 2021-02-11 =
 * Paragraph Bug Fixes
 
-= 1.1.0.9 - 2021-11-02 =
+= 1.1.0.9 - 2021-02-11 =
 * Multi-Block Slider, Tabs and Advanced Text Dyanmic css generation & removal of Inline CSS functionality added.
 * Added the Import Template Functionality in Ibtana Settings.
 * Remove Social Media block, Merge with Icon Block.
 * Minor Bug Fixes.
 
-= 1.1.0.8 - 2021-06-02 =
+= 1.1.0.8 - 2021-02-06 =
 * Socail Media Block Dyanmic css generation & removal of Inline CSS functionality added.
 * Posttype slider block Settings Added.
 * Advanced text icon font size issue resolved.
 * Advanced text settings updated.
 * Bug Fixes.
 
-= 1.1.0.7 - 2021-04-02 =
+= 1.1.0.7 - 2021-02-04 =
 * Progress Bar Dyanmic css generation & removal of Inline CSS functionality added.
 * Progress Bar Dynamic Font Family Added.
 * New Settings added in the navigation of Multiblock slider and Posttype slider.
@@ -767,7 +771,7 @@ Add contact form to your page with reCaptcha.
 * Posttype slider block Bug Fixes.
 * Bug Fixes.
 
-= 1.1.0.6 - 2021-03-02 =
+= 1.1.0.6 - 2021-02-03 =
 * Progress Bar Counter Added.
 * New settings Added in the Title for the Progress Bar.
 * Button Block Dynamic Font Family Added.
@@ -779,7 +783,7 @@ Add contact form to your page with reCaptcha.
 * New Settings Added.
 * Optimization Done.
 
-= 1.1.0.4 - 2021-28-01 =
+= 1.1.0.4 - 2021-01-28 =
 * Advanced text block added.
 * Removed paragraph & heading block.
 * Social Media block gradiant setting added.
@@ -788,26 +792,26 @@ Add contact form to your page with reCaptcha.
 * New Getting started created.
 * Font family issue resolve.
 
-= 1.1.0.3 - 2021-22-01 =
+= 1.1.0.3 - 2021-01-22 =
 * Slider Arrow Button setting added.
 * Blocks Auto recovery added.
 * Heading block counter added.
 * Bug Fixes.
 * Optimize Performance.
 
-= 1.1.0.2 - 2021-19-01 =
+= 1.1.0.2 - 2021-01-19 =
 * Posttype Slider Settings Added.
 * Paragraph New settings Added.
 * New Font family added.
 * Multi Block slider Settings Added.
 * Bug Fixes.
 
-= 1.1.0.1 - 2021-18-01 =
+= 1.1.0.1 - 2021-01-18 =
 * Posttype Slider Settings Added.
 * Multi Block slider Settings Added.
 * Bug Fixes.
 
-= 1.1.0 - 2021-18-01 =
+= 1.1.0 - 2021-01-18 =
 * Optimize Performance.
 * Menu Changes.
 

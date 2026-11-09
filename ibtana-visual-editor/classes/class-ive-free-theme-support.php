@@ -63,7 +63,42 @@ if ( ! class_exists( 'IVE_Free_Theme_Support' ) ) {
 				return false;
 			}
 
+			// Check the remote status last, so the API is only called for admins who could see the popup.
+			if ( ! $this->ive_fts_is_popup_enabled_remotely() ) {
+				return false;
+			}
+
 			return true;
+		}
+
+
+		function ive_fts_is_popup_enabled_remotely() {
+
+			$ive_fts_cache_key	=	'ive_fts_popup_status';
+			$ive_fts_cached			=	get_transient( $ive_fts_cache_key );
+
+			if ( false !== $ive_fts_cached ) {
+				return (bool) $ive_fts_cached;
+			}
+
+			$ive_fts_response		=	wp_remote_post( IBTANA_SHOPIFY_LICENSE_API_ENDPOINT . '/get_free_theme_support_popup_status', array( 'timeout' => 10 ) );
+			$ive_fts_show_popup	=	false;
+
+			if ( is_wp_error( $ive_fts_response ) ) {
+				if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+					error_log( 'IVE Free Theme Support popup status request error: ' . $ive_fts_response->get_error_message() );
+				}
+			} else {
+				$ive_fts_response_body = json_decode( wp_remote_retrieve_body( $ive_fts_response ), true );
+
+				if ( ! empty( $ive_fts_response_body['status'] ) ) {
+					$ive_fts_show_popup = ! empty( $ive_fts_response_body['show_popup'] );
+				}
+			}
+
+			set_transient( $ive_fts_cache_key, $ive_fts_show_popup ? 1 : 0, HOUR_IN_SECONDS );
+
+			return $ive_fts_show_popup;
 		}
 
 
